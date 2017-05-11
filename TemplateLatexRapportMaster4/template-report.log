@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.14)  2 MAY 2017 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.14)  11 MAY 2017 19:27
 entering extended mode
 **./template-report.tex
 (template-report.tex
@@ -1051,12 +1051,60 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box43
 \fn@width=\dimen291
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2\datetime2.sty"
+Package: datetime2 2016/07/12 v1.5.2 (NLCT) date and time formats
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tracklang\tracklang.sty"
+Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\tracklang\tracklang.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count190
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
+)
+\XKV@depth=\count191
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2-english\datetime2-english.ldf
+"
+File: datetime2-english.ldf 2016/03/09 v1.04 (NLCT)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2-english\datetime2-english-bas
+e.ldf"
+File: datetime2-english-base.ldf 2016/03/09 v1.04 (NLCT)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2-french\datetime2-french.ldf"
+File: datetime2-french.ldf 2017/04/08 v1.02
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2-french\datetime2-french-ascii
+.ldf"
+File: datetime2-french-ascii.ldf 2017/04/08 v1.02
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2-english\datetime2-en-US.ldf"
+File: datetime2-en-US.ldf 2016/03/09 v1.04 (NLCT)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\datetime2\datetime2-calc.sty"
+Package: datetime2-calc 2016/07/12 v1.5.2 (NLCT)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfcalendar.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfcalendar.code.tex"
+File: pgfcalendar.code.tex 2007/07/23 v3.0.1a (rcs-revision 1.11)
+\pgfcalendarcurrentjulian=\count192
+))
+\@dtm@julianday=\count193
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
 \wrapoverhang=\dimen292
 \WF@size=\dimen293
-\c@WF@wrappedlines=\count190
+\c@WF@wrappedlines=\count194
 \WF@box=\box44
-\WF@everypar=\toks48
+\WF@everypar=\toks50
 Package: wrapfig 2003/01/31  v 3.6
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
@@ -1064,7 +1112,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip260
 \bibsep=\skip261
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count191
+\c@NAT@ctr=\count266
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 libraryarrows.code.tex"
@@ -1167,41 +1215,51 @@ File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
 librarytrees.code.tex"
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 43.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 45.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-) (template-report.aux (chapters/1_Introduction.aux) (chapters/2_Chapter2.aux) 
-(chapters/6_Conclusion.aux) (chapters/7_Appendix.aux))
+)
+
+Package datetime2 Warning: Region `en-US' has ignored 
+(datetime2)                the following settings:
+(datetime2)                monthyearsep={, }
+ on input line 88.
+
+(template-report.aux (chapters/1_Introduction.aux)
+(chapters/2_StateOfTheArt.aux) (chapters/3_TheoreticalFoundations.aux)
+(chapters/4_Implementation.aux) (chapters/5_Experiments.aux)
+(chapters/6_Discussion.aux) (chapters/7_Conclusion.aux)
+(chapters/8_Appendix.aux))
 \openout1 = `template-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Info: Redefining \degres on input line 101.
-LaTeX Info: Redefining \dots on input line 101.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Info: Redefining \degres on input line 105.
+LaTeX Info: Redefining \dots on input line 105.
 
 
 Package frenchb.ldf Warning: Please load the "natbib" package
-(frenchb.ldf)                BEFORE babel/frenchb; reported on input line 101.
+(frenchb.ldf)                BEFORE babel/frenchb; reported on input line 105.
 
-LaTeX Info: Redefining \up on input line 101.
+LaTeX Info: Redefining \up on input line 105.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1238,17 +1296,17 @@ LaTeX Info: Redefining \up on input line 101.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count192
+\scratchcounter=\count267
 \scratchdimen=\dimen295
 \scratchbox=\box65
-\nofMPsegments=\count193
-\nofMParguments=\count194
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count266
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count270
 \MPscratchDim=\dimen296
-\MPnumerator=\count267
-\makeMPintoPDFobject=\count268
-\everyMPtoPDFconversion=\toks50
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks52
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1291,28 +1349,64 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 101.
+ on input line 105.
 
 <pics/logo-uga.png, id=28, 224.84pt x 145.54375pt>
 File: pics/logo-uga.png Graphic file (type png)
  <use pics/logo-uga.png>
-Package pdftex.def Info: pics/logo-uga.png used on input line 105.
+Package pdftex.def Info: pics/logo-uga.png used on input line 109.
 (pdftex.def)             Requested size: 100.10666pt x 64.79993pt.
 
 <pics/logoINP.png, id=30, 190.7125pt x 120.45pt>
 File: pics/logoINP.png Graphic file (type png)
  <use pics/logoINP.png>
-Package pdftex.def Info: pics/logoINP.png used on input line 105.
+Package pdftex.def Info: pics/logoINP.png used on input line 109.
 (pdftex.def)             Requested size: 119.70135pt x 75.59991pt.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 105.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 109.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 109.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 10
+9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 10
+9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 10
+9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 10
+9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 109.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
  [1
 
 
@@ -1322,89 +1416,80 @@ ics/logoINP.png>]
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 113.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 117.
 
 
 Class memoir Warning: The material used in the headers is too large
 (14.49998pt) for the given head height (0.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 130.
+(in both cases you will find help in the memoir manual). on input line 128.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[1] [2
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
-]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[2]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 154.
  (template-report.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-)
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[3] [4
+[3
 
-]
+])
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[4]
 \openout2 = `./chapters/1_Introduction.aux'.
 
  (chapters/1_Introduction.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 6.
-
-<img/keyframe.jpg, id=55, 555.57562pt x 426.84468pt>
-File: img/keyframe.jpg Graphic file (type jpg)
- <use img/keyframe.jpg>
-Package pdftex.def Info: img/keyframe.jpg used on input line 11.
-(pdftex.def)             Requested size: 222.2263pt x 170.73485pt.
-
-Underfull \hbox (badness 1297) in paragraph at lines 15--16
-\T1/ptm/m/n/12 they aim to of-fer more in-tu-itive
- []
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 15--16
-\T1/ptm/m/n/12 ing called the line of ac-tion, in
- []
-
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
@@ -1412,62 +1497,76 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [1
 
 
- <./img/keyframe.jpg>] <img/skeleton.jpg, id=61, 1263.97218pt x 759.58781pt>
-File: img/skeleton.jpg Graphic file (type jpg)
 
-<use img/skeleton.jpg>
-Package pdftex.def Info: img/skeleton.jpg used on input line 20.
+] <img/keyframe.jpg, id=59, 555.57562pt x 426.84468pt>
+File: img/keyframe.jpg Graphic file (type jpg)
+
+<use img/keyframe.jpg>
+Package pdftex.def Info: img/keyframe.jpg used on input line 37.
+(pdftex.def)             Requested size: 222.2263pt x 170.73485pt.
+
+Underfull \hbox (badness 1297) in paragraph at lines 41--42
+\T1/ptm/m/n/12 they aim to of-fer more in-tu-itive
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 41--42
+\T1/ptm/m/n/12 ing called the line of ac-tion, in
+ []
+
+<img/skeleton.jpg, id=60, 1263.97218pt x 759.58781pt>
+File: img/skeleton.jpg Graphic file (type jpg)
+ <use img/skeleton.jpg>
+Package pdftex.def Info: img/skeleton.jpg used on input line 46.
 (pdftex.def)             Requested size: 379.19458pt x 227.8781pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[2 <./img/skeleton.jpg>] <img/baseline.jpg, id=65, 1049.42062pt x 359.09157pt>
+[2 <./img/keyframe.jpg>] <img/baseline.jpg, id=65, 1049.42062pt x 359.09157pt>
 File: img/baseline.jpg Graphic file (type jpg)
 
 <use img/baseline.jpg>
-Package pdftex.def Info: img/baseline.jpg used on input line 40.
+Package pdftex.def Info: img/baseline.jpg used on input line 66.
 (pdftex.def)             Requested size: 419.76082pt x 143.63408pt.
 )
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[3 <./img/baseline.jpg>]
-\openout2 = `./chapters/2_Chapter2.aux'.
+[3 <./img/skeleton.jpg>]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
- (chapters/2_Chapter2.tex [4
+
+[4 <./img/baseline.jpg>]
+\openout2 = `./chapters/2_StateOfTheArt.aux'.
+
+ (chapters/2_StateOfTheArt.tex)
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[5
 
 
 
 ]
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+\openout2 = `./chapters/3_TheoreticalFoundations.aux'.
+
+ (chapters/3_TheoreticalFoundations.tex [6
 
 
-[5]
 
-Package natbib Warning: Citation `book2011ahad_1' on page 6 undefined on input 
-line 5.
-
-
-Package natbib Warning: Citation `oneata2013action_13' on page 6 undefined on i
-nput line 5.
-
-
-Package natbib Warning: Citation `usha2014motion' on page 6 undefined on input 
-line 9.
-
-)
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
-
-
-[6]
+])
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
 [7]
-\openout2 = `./chapters/6_Conclusion.aux'.
+\openout2 = `./chapters/4_Implementation.aux'.
 
- (chapters/6_Conclusion.tex [8
+ (chapters/4_Implementation.tex [8
 
 
 
@@ -1476,9 +1575,23 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
 [9]
-\openout2 = `./chapters/7_Appendix.aux'.
+\openout2 = `./chapters/5_Experiments.aux'.
 
- (chapters/7_Appendix.tex [10
+ (chapters/5_Experiments.tex [10
+
+
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 11.
+)
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[11]
+\openout2 = `./chapters/6_Discussion.aux'.
+
+ (chapters/6_Discussion.tex [12
 
 
 
@@ -1486,51 +1599,83 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[11] [12
+[13]
+\openout2 = `./chapters/7_Conclusion.aux'.
+
+ (chapters/7_Conclusion.tex [14
+
+
+
+])
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[15]
+\openout2 = `./chapters/8_Appendix.aux'.
+
+ (chapters/8_Appendix.tex [16
+
+
+
+])
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[17] [18
 
 
 ] (template-report.bbl
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 12.
 
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[19
+
+]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+
+[20])
 
 Class memoir Warning: The material used in the headers is too large
 (14.49998pt) for the given head height (0.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 155.
-
-
-Package natbib Warning: There were undefined citations.
+(in both cases you will find help in the memoir manual). on input line 181.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 
-[13
-
-]
+[21]
 \tf@toc=\write5
 \openout5 = `template-report.toc'.
 
  (template-report.aux (chapters/1_Introduction.aux)
-(chapters/2_Chapter2.aux) (chapters/6_Conclusion.aux) (chapters/7_Appendix.aux)
-) ) 
+(chapters/2_StateOfTheArt.aux) (chapters/3_TheoreticalFoundations.aux)
+(chapters/4_Implementation.aux) (chapters/5_Experiments.aux)
+(chapters/6_Discussion.aux) (chapters/7_Conclusion.aux)
+(chapters/8_Appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 30949 strings out of 493333
- 732047 string characters out of 3139168
- 1025050 words of memory out of 3000000
- 33888 multiletter control sequences out of 15000+200000
- 50373 words of font info for 60 fonts, out of 3000000 for 9000
+ 34293 strings out of 493333
+ 807283 string characters out of 3139168
+ 1100947 words of memory out of 3000000
+ 37146 multiletter control sequences out of 15000+200000
+ 64360 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,96p,882b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
-/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template-report.pdf (19 pages, 401151 bytes).
+ <C:\Users\Sarah Kushner\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk>{C:/Program Files/MiKTeX 2.9/font
+s/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/u
+hvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on template-report.pdf (27 pages, 430662 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 166 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

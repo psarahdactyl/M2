@@ -26,6 +26,8 @@
 \usepackage{pgfplots}
 \usepackage{url}
 \usepackage{footnote}
+%\usepackage{datetime2}
+\usepackage[en-US,showdow=true]{datetime2}
 
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -81,15 +83,17 @@ Specialization \optionB  \end{center}\vfill}
 % =======================End of title page formatting
 
 \option{Graphics, Vision, and Robotics} 
-\title{The Sketch-Based Animation of Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
+\title{The Sketch-Based Posing, Animation, and Interaction of Multiple Characters: Animating Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
 \author{Sarah Anne Kushner}
-\date{\today} % Delete this line to display the current date
+\DTMlangsetup[en-US]{ord=raise,monthyearsep={,\space}}
+\newcommand{\mydate}{\DTMdisplaydate{2017}{06}{21}{2}}
+\date{\mydate} % Delete this line to display the current date
 \jury{
 Research project performed at Inria \\\medskip
 Under the supervision of:\\
 Marie-Paule Cani and R\'emi Ronfard\\\medskip
 Defended before a jury composed of:\\
-Head of the jury\\
+James Crowley\\
 Jury member 1\\
 Jury member 2\\
 }
@@ -115,17 +119,35 @@ Your abstract goes here...
 \end{abstract}
 \abstractintoc
 
-\renewcommand\abstractname{Acknowledgement}
-\begin{abstract}
-I would like to express my sincere gratitude to both my supervisers for their invaluable assistance and comments in reviewing this report.
-\end{abstract}
-
-
 \renewcommand\abstractname{R\'esum\'e}
 \begin{abstract} \selectlanguage{French}
 Your abstract in French goes here... 
 \end{abstract}
 \selectlanguage{English}
+
+\newpage
+
+\renewcommand\abstractname{Acknowledgement}
+\begin{abstract}
+\newcommand{\ignore}[1]{}
+
+I would like to officially say thank you to those without whom this thesis would not have been possible. It brings me joy to acknowledge the following people. \\
+
+Thank you to\ignore{Associate Professor} David Breen,\ignore{Assistant Research Professor} Marcello Balduccini and\ignore{Associate Teaching Professor} Daryl Falco from Drexel University for being not only excellent and inspiring mentors and teachers, but also for helping and supporting me on my journey to study in France. \\
+
+James Crowley deserves credit for making my move to France viable, and putting up with my numerous emails. I would also like to thank him for teaching me in the first semester of M2 along with all the other MoSIG M2 professors.\\
+
+I would like to express my sincere gratitude to both my supervisers Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a masters thesis.\\
+
+So much credit goes to Tom. Thank you for letting me think out loud to you on the phone; letting me freak out to you on the phone; sending me pictures of our baby bunny, Cinnamon Louise Bun; and providing me with constant encouragement all the way from the United States. \\
+
+It wouldn't be fair not to mention and thank my dear dancer friends Ruth and Vivian for answering my sometimes obvious and weirdly specific questions about your experiences in dance and choreography.\\
+
+Lastly, thank you to the jury for reading this report and listening to my presentation.
+
+\end{abstract}
+
+
 
 \cleardoublepage
 
@@ -136,17 +158,21 @@ Your abstract in French goes here...
 \SingleSpace
 %==============================CHAPTERS==================
 \include{./chapters/1_Introduction}
-\include{./chapters/2_Chapter2}
-\include{./chapters/6_Conclusion}
-\include{./chapters/7_Appendix}
+\include{./chapters/2_StateOfTheArt}
+\include{./chapters/3_TheoreticalFoundations}
+\include{./chapters/4_Implementation}
+\include{./chapters/5_Experiments}
+\include{./chapters/6_Discussion}
+\include{./chapters/7_Conclusion}
+\include{./chapters/8_Appendix}
 %=========================================================
 
 
 %=========================================================
 \backmatter
-
+\nocite{*}
 \bibliographystyle{plain} % plain-fr si rapport en français 
-\bibliography{bibfile.bib}
+\bibliography{bibfile}
 
 %\cleardoublepage % Goes to an odd page
 %\pagestyle{empty} % no page number

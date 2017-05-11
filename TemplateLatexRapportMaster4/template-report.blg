@@ -1,16 +1,16 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: template-report.aux
 A level-1 auxiliary file: ./chapters/1_Introduction.aux
-A level-1 auxiliary file: ./chapters/2_Chapter2.aux
-A level-1 auxiliary file: ./chapters/6_Conclusion.aux
-A level-1 auxiliary file: ./chapters/7_Appendix.aux
+A level-1 auxiliary file: ./chapters/2_StateOfTheArt.aux
+A level-1 auxiliary file: ./chapters/3_TheoreticalFoundations.aux
+A level-1 auxiliary file: ./chapters/4_Implementation.aux
+A level-1 auxiliary file: ./chapters/5_Experiments.aux
+A level-1 auxiliary file: ./chapters/6_Discussion.aux
+A level-1 auxiliary file: ./chapters/7_Conclusion.aux
+A level-1 auxiliary file: ./chapters/8_Appendix.aux
 The style file: plain.bst
-I couldn't open database file bibfile.bib.bib
----line 35 of file template-report.aux
- : \bibdata{bibfile.bib
- :                     }
-I'm skipping whatever remains of this command
-I found no database files---while reading file template-report.aux
-Warning--I didn't find a database entry for "book2011ahad_1"
-Warning--I didn't find a database entry for "oneata2013action_13"
-Warning--I didn't find a database entry for "usha2014motion"
-(There were 2 error messages)
+Database file #1: bibfile.bib
+Warning--can't use both volume and number fields in grochow2004style
+Warning--can't use both volume and number fields in kovar2002motion
+Warning--can't use both volume and number fields in monzani2000using
+Warning--can't use both volume and number fields in shiratori2006dancing
+(There were 4 warnings)
