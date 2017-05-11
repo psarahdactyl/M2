@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.14)  11 MAY 2017 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.11)  11 MAY 2017 22:44
 entering extended mode
 **./template-report.tex
 (template-report.tex
-LaTeX2e <2017/01/01> patch level 1
+LaTeX2e <2017-04-15>
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\memoir\memoir.cls"
 Document Class: memoir 2016/05/16 v3.7f configurable book, report, article docu
@@ -12,9 +12,8 @@ ment class
 \xlvchars=\skip43
 \@memcnta=\count79
 \c@@memmarkcntra=\count80
-\l@nohyphenation=\language75
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ifetex\ifetex.sty"
 Package: ifetex 2011/12/15 v1.2 ifetex
@@ -344,8 +343,8 @@ Package: babel 2016/04/23 3.9r The Babel package
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-french\frenchb.ldf"
-Language: frenchb 2017/01/15 v3.2f French support from the babel system
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel-french\frenchb.ldf"
+Language: frenchb 2017/01/30 v3.2g French support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2016/04/23 3.9r Babel common definitions
@@ -417,7 +416,7 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -554,10 +553,10 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 Package: relsize 2003/07/04 ver 3.1
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2017/01/24 v2.0c Standard LaTeX package
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2017/01/24 v2.0c Standard LaTeX file
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
@@ -838,7 +837,7 @@ librarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
-Package: textcomp 2017/01/24 v2.0c Standard LaTeX package
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -1308,7 +1307,7 @@ LaTeX Info: Redefining \up on input line 105.
 \makeMPintoPDFobject=\count272
 \everyMPtoPDFconversion=\toks52
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -1660,20 +1659,20 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 (chapters/6_Discussion.aux) (chapters/7_Conclusion.aux)
 (chapters/8_Appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 34293 strings out of 493333
- 807283 string characters out of 3139168
- 1100947 words of memory out of 3000000
- 37146 multiletter control sequences out of 15000+200000
+ 34297 strings out of 493328
+ 807414 string characters out of 3139124
+ 1101502 words of memory out of 3000000
+ 37154 multiletter control sequences out of 15000+200000
  64360 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,12n,96p,882b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Sarah Kushner\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk>{C:/Program Files/MiKTeX 2.9/font
-s/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/u
-hvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template-report.pdf (27 pages, 430662 bytes).
+ <C:\Users\sarah\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ectt1200.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dv
+ips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on template-report.pdf (27 pages, 428946 bytes).
 PDF statistics:
  166 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
