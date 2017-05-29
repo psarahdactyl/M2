@@ -28,6 +28,11 @@ Behzad Dariush, Youding Zhu, Arjun Arumbakkam, and Kikuo Fujimura.
 \newblock In {\em Robotics and Automation (ICRA), 2010 IEEE International
   Conference on}, pages 2499--2506. IEEE, 2010.
 
+\bibitem{blender}
+Blender Foundation.
+\newblock Blender.
+\newblock \url{https://www.blender.org/}, 2006--2017.
+
 \bibitem{gascuel1994displacement}
 Jean-Dominique Gascuel and Marie-Paule Gascuel.
 \newblock Displacement constraints for interactive modeling and animation of
@@ -142,6 +147,13 @@ Wen Tang, Marc Cavazza, Dale Mountain, and Rae Earnshaw.
 \newblock A constrained inverse kinematics technique for real-time motion
   capture animation.
 \newblock {\em The Visual Computer}, 15(7):413--425, 1999.
+
+\bibitem{wang1991combined}
+L-CT Wang and Chih-Cheng Chen.
+\newblock A combined optimization method for solving the inverse kinematics
+  problems of mechanical manipulators.
+\newblock {\em IEEE Transactions on Robotics and Automation}, 7(4):489--499,
+  1991.
 
 \bibitem{wei2016convolutional}
 Shih-En Wei, Varun Ramakrishna, Takeo Kanade, and Yaser Sheikh.

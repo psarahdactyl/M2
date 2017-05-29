@@ -32,7 +32,10 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{natbib}
+\usepackage{hyperref}
 %============================================
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 \makesavenoteenv{tabular}
@@ -83,13 +86,13 @@ Specialization \optionB  \end{center}\vfill}
 % =======================End of title page formatting
 
 \option{Graphics, Vision, and Robotics} 
-\title{The Sketch-Based Posing, Animation, and Interaction of Multiple Characters: Animating Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
+\title{Sketch-Based Posing, Animation, and Interaction of Multiple Characters: Animating Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
 \author{Sarah Anne Kushner}
-\DTMlangsetup[en-US]{ord=raise,monthyearsep={,\space}}
+\DTMlangsetup[en-US]{monthyearsep={\space}}
 \newcommand{\mydate}{\DTMdisplaydate{2017}{06}{21}{2}}
 \date{\mydate} % Delete this line to display the current date
 \jury{
-Research project performed at Inria \\\medskip
+Research project performed at Inria Grenoble -- Rh\^one-Alpes\\\medskip
 Under the supervision of:\\
 Marie-Paule Cani and R\'emi Ronfard\\\medskip
 Defended before a jury composed of:\\
@@ -100,6 +103,7 @@ Jury member 2\\
 \session{June \hfill 2017}
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
+ \maxsecnumdepth{subsubsection}
 
 %%% BEGIN DOCUMENT
 \begin{document}
@@ -137,9 +141,11 @@ Thank you to\ignore{Associate Professor} David Breen,\ignore{Assistant Research 
 
 James Crowley deserves credit for making my move to France viable, and putting up with my numerous emails. I would also like to thank him for teaching me in the first semester of M2 along with all the other MoSIG M2 professors.\\
 
-I would like to express my sincere gratitude to both my supervisers Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a masters thesis.\\
+I would like to express my sincere gratitude to both my supervisers Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a Master thesis.\\
 
-So much appreciation goes to Tom. Thank you for letting me think out loud to you on the phone; comforting me when I freak out to you on the phone; sending me pictures of our baby bunny, Cinnamon Louise Bun; and providing me with constant encouragement all the way from the United States. \\
+The engineers Maguelonne de Brive and Julien Daval \\
+
+I have so much appreciation for Tom. Thank you for letting me think out loud to you on the phone; comforting me when I freak out to you on the phone; sending me pictures of our baby bunny, Cinnamon Louise Bun; and providing me with constant encouragement all the way from the United States. \\
 
 It wouldn't be fair not to mention and thank my dear dancer friends Ruth and Vivian for answering my sometimes obvious and weirdly specific questions about your experiences in dance and choreography.\\
 

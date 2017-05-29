@@ -1,0 +1,30 @@
+\ifglsentryexists{articulated character}{}%
+{%
+\gls@defglossaryentry{articulated character}%
+{%
+name={articulated character},%
+sort={articulated character},%
+type={main},%
+first={articulated character},%
+firstplural={articulated characters},%
+text={articulated character},%
+plural={articulated characters},%
+description={definition},%
+descriptionplural={definition},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
