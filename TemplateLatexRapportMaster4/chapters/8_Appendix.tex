@@ -2,21 +2,66 @@
 
 \section{Glossary}
 
-\begin{itemize}[\null]
+\newcommand{\sortitem}[1]{%
+  \DTLnewrow{list}% Create a new entry
+  \DTLnewdbentry{list}{description}{#1}% Add entry as description
+}
+\newenvironment{sortedlist}{%
+  \DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}% Create new/discard old list
+}{%
+  \DTLsort{description}{list}% Sort list
+  \begin{itemize}[\null]%
+    \DTLforeach*{list}{\theDesc=description}{%
+      \item \theDesc}% Print each item
+  \end{itemize}%
+}
 
-\item \textbf{articulated character} \\
+
+\begin{sortedlist}
+
+\sortitem{ 
+\textbf{articulated character} \\
 definition
+}
 
-\item \textbf{CCD} \\
+\sortitem{
+\textbf{CCD} \\
 cyclic coordinate descent
+}
 
-\item \textbf{constraint} \\
-cyclic coordinate descent
+\sortitem{ 
+\textbf{end effector} \\
+definition
+}
 
-\item \textbf{controller} \\
-cyclic coordinate descent
+\sortitem{ 
+\textbf{rig} \\
+definition
+}
 
-\item \textbf{keyframe} \\
-cyclic coordinate descent
+\sortitem{ 
+\textbf{kinematic chain} \\
+definition
+}
 
-\end{itemize}
+\sortitem{ 
+\textbf{controller} \\
+definition
+}
+
+\sortitem{ 
+\textbf{forward kinematics} \\
+definition
+}
+
+\sortitem{ 
+\textbf{inverse kinematics} \\
+definition
+}
+
+\sortitem{ 
+\textbf{keyframe} \\
+definition
+}
+
+\end{sortedlist}
