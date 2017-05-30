@@ -58,9 +58,9 @@ Forward and inverse kinematics are two general animation methods used mainly in 
 Inverse kinematics are clearly more desirable for an animator since it is easier and faster to pose a character and have the joint angles automatically computed than it is to manipulate the character's joints directly.
 
 \subsection{Multiple Characters}
-Although animation using kinematic controls is the standard, sketch-based interfaces have started to become a plausible option for both animators and those with less experience. Even manipulating controls can be time-consuming. Many papers have been authored dealing with the sketch-based posing of a single humanoid character, discussed later in \autoref{chap:sota}. However, the animation of multiple characters comes with its own unique set of challenges as well. The problem is discovered when more than one humanoid characters interact, when they are in close proximity to each other or when they touch each other.
+Although animation using kinematic controls is the standard, sketch-based interfaces have started to become a plausible option for both animators and those with less experience. Even manipulating controls can be time-consuming. Many papers have been authored dealing with the sketch-based posing of a single humanoid character, discussed later in \autoref{chap:sota}. However, the animation of multiple characters comes with its own unique set of challenges as well. The problem is discovered when humanoid characters interact, namely when they are in close proximity to each other or when they touch each other.
 
-Collisions and contact can both become issues, especially when more than one character is involved. Self collisions include when a part of the character's body collides with another part of its own body. Contacts for one character include constraints between the character's body parts and the itself or other objects in the scene, like the floor, for instance. Now when other characters are introduced to the scene, there are even more options for potential collisions and contacts between body parts of one character and body parts of another. In our case, we only have two characters, but this research could be further generalized to a larger number of characters.
+Collisions and contact are both already issues with one character, made worse when more than one character is involved. Self collisions are when a part of the character's body collides with another part of its own body. Contacts for one character are constraints between the character's body parts and itself or other objects in the scene, like the floor, for instance. Now when other characters are introduced to the scene, there are even more options for potential collisions and contacts between body parts of one character and body parts of another. In our case, we only have two characters, but this research could be further generalized to a larger number of characters.
 
 \subsection{Posing}
 The line of action is the concept of imagining a line that extends through the character's main action. It is commonly used by cartoonists in gesture drawings and the early stages of storyboarding to accentuate the motion and shape of the character. These lines are often dramatic in shape but smooth and simple in quality, usually containing only one or two extrema. The line of action goes through the majority of a character's body or through a part of the body and has a clear direction. See \autoref{fig:lines}.
@@ -88,12 +88,14 @@ Approx 1 to 2 page description of the scientific approach or approaches to a sol
 
 The use case for this research in multi-character animation is a dancing couple. There are many combinations of poses a human can be in, let alone two humans \textit{and} the two humans interacting. Specifically, a clip from the film ``The Band Wagon'' (\citep{thebandwagon1953}) was used to observe the common motions and poses in a dancing couple.
 
-Almost inverting the problem at hand, we start from a pose to find the appropriate lines of action by tracing over the shapes of the dancers' bodies using the Grease Pencil Tool in Blender. It was carried out with the purpose of clarifying the properties and limitations of the typical line of action. Tracing was performed in three different ways:
-\begin{itemize}
-	\item tracing each character separately for the whole clip every few frames, using the previous line of action notation -- the baseline method.
-	\item tracing the characters and treating them together as one only for selected extreme keyframes.
-	\item tracing the characters and treating them as one using as few strokes as possible every few frames of a very short portion of the clip (after carefully selecting the most practical sub-clip).
-\end{itemize}
+Almost inverting the problem at hand, we start from a pose to find the appropriate lines of action by tracing over the shapes of the dancers' bodies using the Grease Pencil Tool in Blender. It was carried out with the purpose of clarifying the properties and limitations of the typical line of action. After seeing at which point the actions started to repeat, a shorter sub-clip was chosen. Annotation was performed in five different ways:
+\begin{enumerate}
+	\item tracking and marking each characters' contact with the ground
+	\item tracking and marking each characters' contact with each other
+	\item tracing lines of action for each character separately every few frames, using the previous line of action notation -- the baseline method.
+	\item tracing lines of action for the characters and treating them as one using as few strokes as possible every few frames.
+	\item once the main common combinations were established from the above two methods, tracing lines of action only for the selected extreme combination poses.
+\end{enumerate}
 
 \begin{figure}[h!]
 	\centering
@@ -160,17 +162,21 @@ Through this process, certain patterns and common poses stood out, enabling the 
 
 Using the previous work (\citep{guay2013line}, \citep{guay2015adding}, and \citep{guay2015space}), already in the process of being developed by the IMAGINE team, I extend the functionality of the line of action to be applied to multiple characters. Their software acted as the baseline with which to compare the new features. Baseline poses and animations were made by taking important keyframes from the film clip to recreate in their software. The amount of time spent running the program, the number of clicks, and number of lines drawn were recorded.
 
-Since characters' skeletons can be seen as trees, a novel approach to solving this problem was combining these kinematic trees into one in a new data structure with special attributes for posing and animating. An interesting way to evaluate this notion of animating a combined character was to, again, reproduce the same poses and animations as in the baseline, but this time using the new structure instead.
+Since characters' skeletons are essentially trees, a novel approach to solving this problem was combining these kinematic trees into one in a new data structure with special attributes for posing and animating. An interesting way to evaluate this notion of animating a combined character was to, again, reproduce the same poses and animations as in the baseline, but this time using the new structure instead.
 
-\textbf{Results to come I hope?}
+Results to come I hope
 
 \section{Contents of this report}
 \ignore{Approx .5 page per chapter. Summarize the contents of the subsections of each chapter. Give the
 topics addressed and summarize what is written in each chapter.}
 
-In the following chapter (\autoref{chap:sota}), I cover the state-of-the-art for this particular problem. I discuss a brief history of dance notation -- how choreographers and dancers use sketching on paper to brainstorm and communicate their ideas of motion, formation, and pose of dance. Then I will talk about the existing sketch-based systems used for posing articulated characters, covering the benefits and limitations of each. A sizeable portion of my work has had to do with kinematic trees and graph data structures, so I will go into a few important graph theory algorithms. Generating animation from existing data is also a widely used technique relevant to my work.
+In the following chapter (\autoref{chap:sota}), I cover the state-of-the-art for this particular problem. I discuss a brief history of dance notation -- how choreographers and dancers use sketching on paper to brainstorm and communicate their ideas of motion, formation, and pose of dance. Then I will talk about the existing sketch-based systems used for posing articulated characters, covering the benefits and limitations of each. A sizeable portion of my work has had to do with kinematic trees and graph data structures, so I will go into a few important graph theory algorithms. Generating animation from existing data is also a widely relevant topic to my work. So, I also describe previous research regarding that.
 
-In \autoref{chap:theory}, ...
+In \autoref{chap:theory}, the fundamentals of character animation are more closely examined. (more to come when I actually write it...)
 
-\autoref{chap:implementation} covers ...
+\autoref{chap:implementation} covers exactly how a solution was reached and what it entails. (more to come when I actually write it...)
+
+\autoref{chap:results} is where I go over the methods of validating our solution. (more to come when I actually write it...)
+
+Discussion of the lessons learned during this project and the concluding thoughts on the process are explored in \autoref{chap:discussion} and \autoref{chap:conclusion}, respectively. (more to come when I actually write it...)
 
