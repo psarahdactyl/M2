@@ -1,12 +1,12 @@
-\documentclass[12pt, a4paper]{memoir} % for a short document
+\documentclass[12pt, a4paper, parskip=full]{memoir} % for a short document
 \usepackage[french,english]{babel}
 
 \usepackage [vscale=0.76,includehead]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-%\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
-%\geometry{landscape}                % Activate for for rotated page geometry
-%\OnehalfSpacing
+% \geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+% \geometry{landscape}                % Activate for for rotated page geometry
+% \OnehalfSpacing
 % \setSingleSpace{1.05}
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+% \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
 
 
 %===================================== packages
@@ -26,9 +26,10 @@
 \usepackage{pgfplots}
 \usepackage{url}
 \usepackage{footnote}
+
+
 %\usepackage{datetime2}
 \usepackage[en-US,showdow=true]{datetime2}
-
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -98,13 +99,19 @@ Under the supervision of:\\
 Marie-Paule Cani and R\'emi Ronfard\\\medskip
 Defended before a jury composed of:\\
 James Crowley\\
-Jury member 1\\
-Jury member 2\\
+Dominique Vaufreydaz\\
+Jean-S\'ebastien Franco\\
+Jo\"elle Thollot\\
 }
 \session{June \hfill 2017}
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
  \maxsecnumdepth{subsubsection}
+ 
+
+%\setlength{\parindent}{0pt}
+\nonzeroparskip 
+ 
 
 %%% BEGIN DOCUMENT
 \begin{document}
@@ -115,7 +122,7 @@ Jury member 2\\
 \end{titlingpage}
 
 %\small
-\setlength{\parskip}{-1pt plus 1pt}
+%\setlength{\parskip}{-1pt plus 1pt}
 
 \renewcommand{\abstracttextfont}{\normalfont}
 \abstractintoc
