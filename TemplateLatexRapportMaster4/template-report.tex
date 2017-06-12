@@ -38,6 +38,7 @@
 \usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{datatool}
+\usepackage{array}
 %============================================
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 \makesavenoteenv{tabular}
@@ -93,15 +94,30 @@ Specialization \optionB  \end{center}\vfill}
 \DTMlangsetup[en-US]{monthyearsep={\space}}
 \newcommand{\mydate}{\DTMdisplaydate{2017}{06}{21}{2}}
 \date{\mydate} % Delete this line to display the current date
+
 \jury{
 Research project performed at Inria Grenoble -- Rh\^one-Alpes\\\medskip
+\rule{\textwidth}{1pt}
+
 Under the supervision of:\\
-Marie-Paule Cani and R\'emi Ronfard\\\medskip
+
+%\noindent\makebox[0.8\textwidth]{Prof. Marie-Paule Cani\hfill Dr. R\'emi Ronfard}
+%\noindent\makebox[0.8\textwidth]{\'Ecole Polytechnique\hfill Inria}
+
+\begin{tabular}{c c c}
+  Prof. Marie-Paule Cani & \hfill & Dr. R\'emi Ronfard \\
+  \'Ecole Polytechnique & \hfill & Inria Grenoble \\
+  Paris-Saclay & \hfill & Rh\^one-Alpes\\
+
+\end{tabular}
+
+\rule{\textwidth}{1pt}
+
 Defended before a jury composed of:\\
-James Crowley\\
-Dominique Vaufreydaz\\
-Jean-S\'ebastien Franco\\
-Jo\"elle Thollot\\
+Prof. James Crowley\\
+Prof. Jo\"elle Thollot\\
+Assistant Prof. Dominique Vaufreydaz\\
+Assistant Prof. Jean-S\'ebastien Franco\\
 }
 \session{June \hfill 2017}
 \setcounter{tocdepth}{4}
@@ -152,7 +168,7 @@ James Crowley deserves credit for making my move to France viable, and putting u
 
 I would like to express my sincere gratitude to both my supervisers Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a Master thesis.\\
 
-To the IMAGINE engineers Maguelonne de Brive and Julien Daval: thank you for answering my development questions and teaching me the mysterious ways of Blender. \\
+To the IMAGINE engineers Maguelonne de Brive and Julien Daval: thank you for answering my development questions and teaching me the mysterious ways of Collodi and Blender. \\
 
 I have so much appreciation for Tom. Thank you for letting me think out loud to you on the phone; comforting me when I freak out to you on the phone; sending me pictures of our baby bunny, Cinnamon Louise Bun; and providing me with constant encouragement all the way from the United States. \\
 
