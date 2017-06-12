@@ -11,6 +11,11 @@ Autodesk.
 \newblock Maya.
 \newblock \url{https://www.autodesk.fr/products/maya/overview}, 2017.
 
+\bibitem{calvert2005applications}
+Tom Calvert, W~Wilke, Rhonda Ryman, and Ilene Fox.
+\newblock Applications of computers to dance.
+\newblock {\em IEEE computer Graphics and Applications}, 25(2):6--12, 2005.
+
 \bibitem{causley1980introduction}
 Marguerite Causley.
 \newblock {\em An Introduction to Benesh: Movement Notation}.
@@ -75,6 +80,18 @@ Chris Hecker, Bernd Raabe, Ryan~W Enslow, John DeWeese, Jordan Maynard, and
   morphologies.
 \newblock {\em ACM Transactions on Graphics (TOG)}, 27(3):27, 2008.
 
+\bibitem{ho2014multi}
+Edmond~SL Ho, He~Wang, and Taku Komura.
+\newblock A multi-resolution approach for adapting close character interaction.
+\newblock In {\em Proceedings of the 20th ACM Symposium on Virtual Reality
+  Software and Technology}, pages 97--106. ACM, 2014.
+
+\bibitem{hodgins1995animating}
+Jessica~K Hodgins, Wayne~L Wooten, David~C Brogan, and James~F O'Brien.
+\newblock Animating human athletics.
+\newblock In {\em Proceedings of the 22nd annual conference on Computer
+  graphics and interactive techniques}, pages 71--78. ACM, 1995.
+
 \bibitem{johnson1975finding}
 Donald~B Johnson.
 \newblock Finding all the elementary circuits of a directed graph.
@@ -101,6 +118,12 @@ David~G Luenberger.
 Mentar Mahmudi, Pawan Harish, Beno{\^\i}t Le~Callennec, and Ronan Boulic.
 \newblock Artist-oriented 3d character posing from 2d strokes.
 \newblock {\em Computers \& Graphics}, 57:81--91, 2016.
+
+\bibitem{matthews2011procedural}
+Elizabeth~A Matthews and Geoffrey~B Matthews.
+\newblock Procedural generation of cuban dance motion.
+\newblock In {\em Computer Games (CGAMES), 2011 16th International Conference
+  on}, pages 293--297. IEEE, 2011.
 
 \bibitem{thebandwagon1953}
 Vincente Minnelli.
@@ -132,6 +155,12 @@ Takaaki Shiratori, Atsushi Nakazawa, and Katsushi Ikeuchi.
 \newblock In {\em Robotics and Automation, 2006. ICRA 2006. Proceedings 2006
   IEEE International Conference on}, pages 3654--3659. IEEE, 2006.
 
+\bibitem{shum2007simulating}
+Hubert~PH Shum, Taku Komura, and Shuntaro Yamazaki.
+\newblock Simulating competitive interactions using singly captured motions.
+\newblock In {\em Proceedings of the 2007 ACM symposium on Virtual reality
+  software and technology}, pages 65--72. ACM, 2007.
+
 \bibitem{stelzleni2015sketch}
 Ryan Stelzleni, Bret Parker, Tom Hahn, Sarah Shen, Dan McGarry, and Chen Shen.
 \newblock Sketch to pose in pixar's presto animation system.
@@ -147,6 +176,12 @@ Wen Tang, Marc Cavazza, Dale Mountain, and Rae Earnshaw.
 \newblock A constrained inverse kinematics technique for real-time motion
   capture animation.
 \newblock {\em The Visual Computer}, 15(7):413--425, 1999.
+
+\bibitem{van1997footprints}
+Michiel Van De~Panne.
+\newblock From footprints to animation.
+\newblock In {\em Computer Graphics Forum}, volume~16, pages 211--223. Wiley
+  Online Library, 1997.
 
 \bibitem{wang1991combined}
 L-CT Wang and Chih-Cheng Chen.
