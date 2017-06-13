@@ -39,6 +39,10 @@
 \usepackage{hyperref}
 \usepackage{datatool}
 \usepackage{array}
+\usepackage{multibib}
+\newcites{online}{Internet Sources}
+\usepackage{cleveref}
+\usepackage{makeidx} 
 %============================================
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 \makesavenoteenv{tabular}
@@ -89,7 +93,7 @@ Specialization \optionB  \end{center}\vfill}
 % =======================End of title page formatting
 
 \option{Graphics, Vision, and Robotics} 
-\title{Sketch-Based Posing, Animation, and Interaction of Multiple Characters: Animating Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
+\title{Sketch-Based Posing and Interaction of Multiple Characters: Animating Dancing Couples} %\\\vspace{-1ex}\rule{10ex}{0.5pt} \\sub-title} 
 \author{Sarah Anne Kushner}
 \DTMlangsetup[en-US]{monthyearsep={\space}}
 \newcommand{\mydate}{\DTMdisplaydate{2017}{06}{21}{2}}
@@ -116,19 +120,21 @@ Under the supervision of:\\
 Defended before a jury composed of:\\
 Prof. James Crowley\\
 Prof. Jo\"elle Thollot\\
+Prof. Laurence Nigay\\
 Assistant Prof. Dominique Vaufreydaz\\
-Assistant Prof. Jean-S\'ebastien Franco\\
 }
 \session{June \hfill 2017}
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
- \maxsecnumdepth{subsubsection}
- 
+\maxsecnumdepth{subsubsection}
+
+%==============================================
+\makeindex
+%==============================================
 
 \setlength{\parindent}{0pt}
 \nonzeroparskip 
  
-
 %%% BEGIN DOCUMENT
 \begin{document}
 \selectlanguage{English} % french si rapport en français
@@ -204,8 +210,11 @@ Lastly, thank you to the jury for reading this report and listening to my presen
 
 %=========================================================
 \backmatter
-\bibliographystyle{plain} % plain-fr si rapport en français 
+\bibliographystyle{plain} 
 \bibliography{bibfile}
+
+\bibliographystyleonline{plain}
+\bibliographyonline{online}
 
 %\cleardoublepage % Goes to an odd page
 %\pagestyle{empty} % no page number
