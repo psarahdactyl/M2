@@ -8,5 +8,35 @@ To that effect, currently only pairs of joints can be selected and merged. It co
 \subsection{User Constraints}
 Users are only allowed to attach and detach hierarchies at keyframes to avoid interpolation issues. If a contact made by the merged hierarchy is present in one keyframe and absent in the next, the splitting of the hierarchy would have to be done during the interpolation at some time in between the two keyframes. So for now the user can only make sets of keyframes where the actual detaching is done exactly at a keyframe.
 
+\subsection{Taking Advantage of Patterns}
+Symmetry and parallelism are both prevalent in the use case video. It would be nice to use this to make posing even faster. For example, while posing one character, the system could pose the other in the same or opposite way. This would involve mirroring the drawn LOA to match to the second characters, limb. This raises questions about which kinematic chain on the second character to select. 
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/parallelism}
+                \caption{Parallelism.}
+                \label{fig:parallelism}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/symmetry}
+                \caption{Symmetry.}
+                \label{fig:symmetry}
+        \end{subfigure}%
+        \caption{Patterns in the poses.}
+	\label{fig:patterns}
+\end{figure}
+
+\subsection{Twisting}
+In future work, the twisting problem mentioned in \autoref{chap:issues} would be very nice to explore, since the amount of spins the dancing characters do is quite high. The characters spin separately and together, so the technique would need to work on both separate and combined kinematic trees.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{img/twistingannotation}
+\caption{One idea for a twisting notation.}
+\end{figure}
+
 \subsection{Future Validation}
 Ideally, many more people would be involved in the user study, ranging from artists to engineers. There might be more than three baseline poses and possibly a longer animation to recreate. This certainly gives more validity to the method than just testing between people who have personally worked on the software.

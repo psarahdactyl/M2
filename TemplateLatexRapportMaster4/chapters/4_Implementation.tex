@@ -1,6 +1,8 @@
 \chapter{Extending the Line of Action to Multiple Characters}\label{chap:implementation}
 
-\section{Approach}
+\section{Analysis of a Typical Video Sequence}
+The previous line of action method in practice is still more tedious than it could be when working with more than one character. In order to work towards the goal of improving the line of action, it is necessary to observe the common combinations of limbs in a typical dance scene.
+
 Almost inverting the problem at hand, we start from a pose to find the appropriate lines of action by tracing over the shapes of the dancers' bodies using the Grease Pencil Tool in Blender. It was carried out with the purpose of clarifying the properties and limitations of the typical line of action. After seeing at which point the actions started to repeat, a shorter sub-clip was chosen. Annotation was performed in five different ways:
 \begin{enumerate}
 	\item tracking and marking each characters' contact with the ground
@@ -15,14 +17,14 @@ Almost inverting the problem at hand, we start from a pose to find the appropria
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering
                 \includegraphics[width=\linewidth]{img/keyframe_case_7_baseline}
-                \caption{The typical lines of action trace out the whole skeleton, and in the worst case is 3 lines per character.}
+                \caption{The typical lines of action trace out the whole skeleton like Sutton notation, and in the worst case is 3 lines per character. This may not seem like such an overwhelming amount, but keeping consistency through a whole clip is cumbersome.}
                 \label{fig:baseline}
         \end{subfigure}
         \quad
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering
                 \includegraphics[width=\linewidth]{img/keyframe_case_7_new}
-                \caption{Treating the characters as one bigger character allows the user to draw fewer lines to indicate the same pose.}
+                \caption{Treating the dancers as one character allows the user to draw fewer lines to indicate the same pose. LOAs indicate position and orientation, so the secondary line in green controls both the arm and leg on the left.}
                 \label{fig:new_notation}
         \end{subfigure}%
         \caption{Comparing the old line of action and the new.}
@@ -30,25 +32,6 @@ Almost inverting the problem at hand, we start from a pose to find the appropria
 \end{figure}
 
 Through this process, certain patterns and common poses emerged, enabling the development of an improved notation for illustrating the poses of characters during their interactions with each other. Patterns included symmetry, parallelism, and repetition. Of course, using these patterns and assumptions to our advantage is what drove the development of a solution. It seemed that during many instances in the clip, it would be more efficient to draw lines over the two dancers as if they were one character. This morphed ``combined'' character should be easier to pose and animate.
-
-\begin{figure}[h!]
-	\centering
-        \begin{subfigure}[b!]{0.45\textwidth}
-        	\centering
-                \includegraphics[width=\linewidth]{img/parallelism}
-                \caption{Parallelism.}
-                \label{fig:parallelism}
-        \end{subfigure}
-        \quad
-        \begin{subfigure}[b!]{0.45\textwidth}
-        	\centering
-                \includegraphics[width=\linewidth]{img/symmetry}
-                \caption{Symmetry.}
-                \label{fig:symmetry}
-        \end{subfigure}%
-        \caption{Patterns in the poses.}
-	\label{fig:patterns}
-\end{figure}
 
 \begin{figure}[h!]
 	\centering
@@ -78,116 +61,95 @@ Taking inspiration from Sutton Notation, we propose a new notation for represent
 
 There is a dance scene in the film ``The Band Wagon,'' where Cyd Charisse and Fred Astaire start out by walking together side by side, exchanging twirls until it morphs completely into a swing style dance. This scene is our use case for inventing a notation which extends seamlessly to more than one character.
 
-To determine which poses for these dancers were common, I annotated the video, keeping track of contact points between the two characters, the contact points with the characters and the ground, the main LOAs, and the secondary LOAs. Once the video was annotated, I categorized the keyframes into how many LOAs it took to create that pose. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/labelednotation}
+\caption{Labeled notation.}
+\end{figure}
 
-NOTE: I am going to add images and an explanation.
+To determine which poses for these dancers were common, I annotated the video, keeping track of contact points between the two characters (purple), the contact points with the characters and the ground (blue), the main LOAs (yellow), and the secondary LOAs (green). Once the video was annotated, I categorized the keyframes into how many LOAs it took to create that pose. I chose the most extreme examples of each combination that I could find.
+\newpage
 
-\ignore{
-\begin{table}[!htb]
-  \centering
-  \begin{tabular}{ | c | c || c | c | c | }
-    \hline
-     & Separate & \multicolumn{3}{c |}{Together}\\ \hline
-    1 LOA 
-    & &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/01keyframe}
-    \end{minipage} & & \\ 
-    \hline
-    2 LOA 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/2loa_separate_keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/02keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/03keyframe}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/01keyframe}
+    \end{minipage} &  
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_1_(1)}
+    \end{minipage}\\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/02keyframe}
     \end{minipage} & 
-    \\ \hline
-    3 LOA 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/3loa_separate_keyframe}
+        \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_2_(2)}
+    \end{minipage} \\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/03keyframe}
+    \end{minipage} & 
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_3_(2)}
+    \end{minipage} \\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/04keyframe}
+    \end{minipage} &
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_4_(3)}
+    \end{minipage}  \\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/05keyframe}
+    \end{minipage} &  
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_5_(3)}
+    \end{minipage}\\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/06keyframe}
+    \end{minipage} & 
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_6_(3)}
+    \end{minipage} \\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/07keyframe}
+    \end{minipage} &  
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_7_(4)}
+    \end{minipage}\\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/08keyframe}
+    \end{minipage} &  
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_8_(4)}
+    \end{minipage}\\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/09keyframe}
+    \end{minipage} &  
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_9_(4)}
+    \end{minipage}\\
+	\begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/10keyframe}
+    \end{minipage} & 
+    \begin{minipage}{.28\textwidth}
+      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_10_(5)}
     \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/04keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/05keyframe}
-    \end{minipage} 
-    & 
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/06keyframe}
-    \end{minipage} 
-    \\ \hline
-    4 LOA 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/4loa_separate_keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/07keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/08keyframe}
-    \end{minipage} 
-    & 
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/09keyframe}
-    \end{minipage} 
-    \\ \hline 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/4-1loa_separate_keyframe}
-    \end{minipage}
-    & & & 
-    \\ \hline
-    5 LOA 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/5loa_separate_keyframe}
-    \end{minipage}
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/10keyframe}
-    \end{minipage} & & 
-    \\ \hline
-    6 LOA 
-    &
-    \begin{minipage}{.15\textwidth}
-      \includegraphics[width=\linewidth, height=20mm]{img/6loa_separate_keyframe}
-    \end{minipage}
-    & & & 
-    \\ \hline
-  \end{tabular}
-  \caption{Types of Keyframes for Two Dancing Characters}
-  \label{table:LOAChart}
+\end{tabular}
+\caption{Common LOA combinations and their corresponding examples in the video.}
+\label{tab:combos}
 \end{table}
-}
 
+\section{Merging Kinematic Trees}
+Rather than changing the whole LOA concept and matching algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize the same iterative method to pose. At each keyframe, the kinematic trees of the two characters are to be merged in a consistent way that preserves the tree structure. Then this new structres is controlled by the new proposed lines of action.
 
-\section{Merging Kinematics Trees}
-Rather than changing the whole LOA concept and matching algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize the same iterative method to pose.
-
-From \citep{guay2015space}, since there is a viewing plane constraint on which the user draws the posing line, only one angle per joint has to be calculated to get from its current position to the target position. Starting from one end of the selected body line, local joint rotations are found using these equations:
-
+From \citep{guay2015space}, since there is a viewing plane constraint on which the user draws the posing line, only one angle per joint has to be calculated to get from its current position to the target position. Starting from one end of the selected body line, local joint rotations are found using this equation:
 \begin{equation}\label{eq:matching}
 \theta_i(t) = \angle (Px_{i+1}(t) - Px_i(t), z_{i+1}(t)z_i(t)) 
 \end{equation}
-
 where $Px$ is the joint directed projected onto the viewing plane at time $t$ and $z$ is the drawn joint direction determined by the LOA. The current joint $i$ is the parent of joint $i+1$. Then the angles $\theta_i$ are applied to each joint to move it to the new pose. This method is fast and performs well. So instead of changing it, we merge kinematic trees of characters into one combined tree. 
 
 Internally, both the tree and graph structures of characters' skeletons are stored. There is also another type of node called a ``separator'' node, which is purely virtual and acts as a sort of local root to allow for more body line options.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{img/shoulder}
 \caption{In between the spine and the shoulder joints is a separator node, so the user can select only the arm as a body line.}
@@ -230,6 +192,32 @@ Internally, both the tree and graph structures of characters' skeletons are stor
 \end{algorithm}
 
 A combined node is made by averaging frames (translation and rotation) of other nodes, effectively becoming a rigid body. A combined node made from a cycle averages all the frames of the nodes in the cycle with higher weight on the combined nodes within the cycle. A combined node made by connecting just two nodes averages the two frames and adds a virtual root. By combining nodes this way, we convert the two characters' trees into one, which is the goal.
+
+A kinematic tree must be just that, a tree. It cannot have cycles and each node can only have one parent, so Johnson's algorithm is executed to find all simple cycles in the graph. From this all the nodes in the cycle are merged into its own combined node.
+
+\subsection{Example}
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm2}
+                \caption{The two characters kinematic trees.}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm3}
+                \caption{A pair of joints are selected to be combined and merge the two hierarchies. These particular nodes do not share a parent. So a virtual root needs to be created.}
+        \end{subfigure}%
+        \quad
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm4}
+                \caption{The new root is made the parent of the combined node. Then the edges to each original root are reversed to keep the data structure as a tree.}
+        \end{subfigure}
+    \caption{An example of the algorithm.}
+	\label{fig:example}
+\end{figure}
 
 \section{Interface}
 To select a body line for one character, the user clicks on which model they want either in the viewport or in the node list on the right hand side panel and activates annotation mode. Then they can press and hold shift and draw over the character, tracing the limb they want to select. A path is found between the two closest controllers to the endpoints of the LOA. If a path is found, the blue line shows what was finally selected. The red line is what the user drew and the green line shows a posing line.

@@ -1,0 +1,14 @@
+------------------------------ 
+	 USER STUDY: 
+------------------------------ 
+Study performed on: Tue Jun 13 2017 at 21:40
+Total time running: 0:04:42
+Number of user clicks in the viewport: 18
+Number of selection lines drawn (click+shift): 2
+Number of posing lines drawn (click+ctrl): 3
+(|color(Green)Number of joints selected: 2)
+(|color(Green)Number of merges made: 1)
+
+------------------------------ 
+end of user study 
+------------------------------ 

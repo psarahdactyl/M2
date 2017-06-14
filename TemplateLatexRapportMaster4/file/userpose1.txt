@@ -1,0 +1,11 @@
+------------------------------ 
+	 USER STUDY: 
+------------------------------ 
+Total time running: 0:11:24
+Number of user clicks in the viewport: 145
+Number of selection lines drawn (click+shift): 22
+Number of posing lines drawn (click+ctrl): 45
+
+------------------------------ 
+end of user study 
+------------------------------ 
