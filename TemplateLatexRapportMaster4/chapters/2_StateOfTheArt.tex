@@ -3,12 +3,12 @@
 \subsection{Sketch-Based Animation}
 Guay et al. originally proposed the line of action as a posing tool. In ``The Line of Action: an Intuitive Interface for Expressive Character Posing'' (\citep{guay2013line}), there were several contributions: adapting the line of action (LOA) in the form of a new notation to posing 3D characters, solving the LOA problem as an optimization problem, and validating this technique by having users recreate poses from images. 
 
-From this paper came a prototype, in which a user can draw a line in the shape they want a set of bones to take. They take advantage of the limited amount of kinematic chains called \index{body line@ body line, body lines}\textbf{body lines}. There are said to be only 10 possible body lines, when constrained to be maximal -- meaning that they must end at an extremity -- connected, and linear -- meaning the body line must be a straight line through the tree with no other nodes connected. Even with this constraint, adding more characters allows more combinations of bones.
+From this paper came a prototype, in which a user can draw a line in the shape they want a kinematic chain to take. There are a limited amount of maximal, connected, linear kinematic chains, each of which is called a \index{body line@ body line, body lines}\textbf{body line}. Maximal means that the body line must begin and end at an extremity. A connected body line has edges (bones) between every joint (node) in the chain. Linear means the body line must be a straight chain through the tree with no branching, so each node is degree 1 or 2. Though these contraints limit the number of possible chains which can be selected, each character added to the problem adds more body lines. If characters are interacting or touching, this number increases dramatically to the point where a new technique needs to be introduced.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.4]{img/shoulder}
-\caption{An example of a connected and linear selected body line.}
+\includegraphics[scale=0.4]{img/bodyline}
+\caption{An example of a maximal, connected, and linear selected body line from the head to the left foot.}
 \end{figure}
 
 Engineers in the IMAGINE team at Inria have implemented the solution of the LOA problem within software called Rumba. In this software, the user draws a selection line to select one of the 10 kinematic chains. Then the user draws a second target posing line to move the body line to a new shape and position. Their system works extremely well for a single humanoid character, and even multiple humanoid characters which are strictly separate from each other.
@@ -30,14 +30,14 @@ Noticing that lines of actions can visually suggest the potential energy of a mo
 
 In \citep{guay2015space}, Guay et al. continued their work on the line of action to create a technique for animation called space-time sketching, in which a user can draw a line in the path they want a model to take and it will be animated accordingly. As the character follows the path, its model bends and changes shape in a physically realistic way. Their system currently supports creating different movements with the path such as bouncing, rolling, and twisting.
 
-The biggest improvement from their first paper to this one in regards to this work is the linear time algorithm for matching a 3D skeleton to a drawn LOA. This more numerically stable approach to matching the character to the line makes for faster results than the formerly used minimization problem.
+The biggest improvement from their first paper to \citep{guay2015space} in regards to this work is the linear time algorithm for matching a 3D skeleton to a drawn LOA. This more numerically stable approach to matching the character to the line makes for faster results than the formerly used minimization problem.
 
 \begin{figure}[!h]
 \includegraphics[scale=0.4]{img/rolling}
 \caption{A lamp post model rolling. \citep{guay2015space}.}
 \end{figure}
 
-Similarly, \citep{mahmudi2016artist} and \citep{stelzleni2015sketch} respectively describe \'Ecole Polytechnique F\'ed\'erale de Lausanne's and Pixar's use of sketching to pose characters. In \citep{mahmudi2016artist}, slight improvements in fitting the body line to the LOA, which is still linear. They also provide automatic body line selection based on the joint the user selects plus the direction of their sketching. There is no mention in either paper about handling the interactions of characters. 
+Similarly, \citep{mahmudi2016artist} and \citep{stelzleni2015sketch} respectively describe \'Ecole Polytechnique F\'ed\'erale de Lausanne's and Pixar's use of sketching to pose characters. In \citep{mahmudi2016artist}, slight improvements were made in fitting the body line to the LOA, and their algorithm is still linear. They also provide automatic body line selection based on the joint the user selects plus the direction of their sketching. There is no mention in either paper about handling the interactions of characters. 
 
 \begin{figure}[!h]
 \centering
@@ -56,7 +56,7 @@ Similarly, \citep{mahmudi2016artist} and \citep{stelzleni2015sketch} respectivel
 \subsection{Articulated Characters}
 Chris Hecker's ``My Adventures with Inverse Kinematics'' (\citep{hecker2002my}) compares and contrasts different inverse kinematics algorithms to animate a character climbing a rock wall. Articulated character animation is challenging due to the combination of contraints that limits the viability of a pose. In his work with the \index{cyclic coordinate descent@cyclic coordinate descent, CCD} cyclic coordinate descent (CCD) algorithm, whose calculations must start at a fixed root, Hecker decides to dynamically change the root of the human's kinematic tree based on what makes the most sense. The idea of root changing can be particularly helpful in the case of combining kinematic trees, though this talk only deals with one character.
 
-Articulated characters are complicated to animate. To this end, generating animation is sometimes easier than doing it by setting a character's pose over and over. Many researchers tackle the problems that come with using motion capture data instead of manually keyframing. The following articles explore generating animation and reusing animation.
+Articulated characters are complicated to animate. To this end, generating animation is sometimes easier than doing it by setting a character's pose over and over. Many researchers tackle animation problems using motion capture data instead of manually keyframing. The following articles explore generating animation and reusing animation.
 
 In ``Motion Graphs'' (\citep{kovar2002motion}) and ``Style-Based Inverse Kinematics'' (\citep{grochow2004style}), the authors give two different generative methods used to build animations from motion capture sequences. \citep{kovar2002motion} shows how to construct a graph encoding the different orderings of clips that could possibly make up a realistic animation, while \citep{grochow2004style} makes use of a generative machine learning model to easily apply a likely and reasonable style to an existing clip.
 
@@ -67,13 +67,13 @@ Interactions of multiple characters has never been explored in sketch-based anim
 
 \citep{shum2007simulating} focuses on fighting as an example of close character interactions. This paper also uses motion capture data of single characters to create action-level motion graphs to generate realistic and competitive interactions.
   
-\citep{ho2014multi} and \citep{zhao2017character} aim to describe the dynamic spatial relations between characters and also between characters and objects. They both propose an interaction surface or mesh which is multi-structured. \citep{ho2014multi} uses this surface to adapt motion capture data to accomodate new contraints and different character sizes. \citep{zhao2017character} uses the interaction bisector surace, seen in \autoref{fig:ibs}, to retrieve similar motions from a database given a 3D animated clip.
+\citep{ho2014multi} and \citep{zhao2017character} aim to describe the dynamic spatial relations between characters and also between characters and objects. They both propose an interaction surface or mesh which is multi-structured. \citep{ho2014multi} uses this surface to adapt motion capture data to accomodate new contraints and different character sizes. \citep{zhao2017character} uses the interaction bisector surface, seen in \autoref{fig:ibs}, to retrieve similar motions from a database given a 3D animated clip.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.5]{img/ibs}
-\label{fig:ibs}
 \caption{The interaction bisector surface.}
+\label{fig:ibs}
 \end{figure}
 
 
@@ -95,12 +95,12 @@ Benesh Movement Notation (introduced in \citep{causley1980introduction}) is anal
 \caption{An example of Benesh Movement Notation.}
 \end{figure}
 
-Labanotation is another way of recording human movement. Rudolph Laban invented it with the purpose of annotating dances. Rather than use figures though, Labanotation uses more abstract notions to describe properties of a movement. The Dance Notation Bureau has documented dances using this more precise and technical method, though it is arguably not ideal for artists to quickly write a dance.
+Labanotation is another way of recording human movement. Rudolph Laban invented it with the purpose of annotating dances. Rather than use figures though, Labanotation uses more abstract notions to describe properties of a movement such as its direction, body part, duration, and quality. The Dance Notation Bureau has documented dances using this more precise and technical method, though it is arguably not ideal for artists to quickly write a dance.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.5]{img/over-labanotation}
-\caption{An example of Labanotation.}
+\caption{An example of Labanotation from \protect\citeonline{labanotation}.}
 \end{figure}
 
 \subsection{Dance in Animation}
@@ -119,7 +119,7 @@ There is a strong interest in portraying dance in animation, which can be seen i
         	\centering
                 \includegraphics[width=\linewidth]{img/buzz-and-jessie}
                 \label{fig:toystory}
-                \caption{Buzz LightYear and Jessie dance.}
+                \caption{Buzz LightYear and Jessie dance in \textit{Toy Story}.}
         \end{subfigure}%
         \quad
         \begin{subfigure}[b!]{0.3\textwidth}
@@ -132,7 +132,7 @@ There is a strong interest in portraying dance in animation, which can be seen i
 	\label{fig:danceinmovies}
 \end{figure}
 
-It has progressed from live action to 2D animation to 3D animation. It is safe to say thqt dance will always be an important part of the human experience and will therefore continue to be represented in art, including film and animation.
+It has progressed from live action to 2D animation to 3D animation. It is safe to say that dance will always be an important part of the human experience and will therefore continue to be represented in art, including film and animation.
 
 So it seems almost obvious that researchers must also be interested in dance in animation. In Gleicher's 1998 paper, \citep{gleicher1998retargetting}, he describes a method of retargetting motion from a motion capture database to 3D articulated characters of different sizes, of which an application is dancing.
 
@@ -142,4 +142,4 @@ So it seems almost obvious that researchers must also be interested in dance in 
 \caption{Motion retargetting applied to dance from \citep{gleicher1998retargetting}.}
 \end{figure}
 
-Based on the 2005 paper \citep{calvert2005applications}, which involves a system for composing and editing dances using Labanotation, Matthews  et al. experimented with procedurally generating dance motion in the paper \citep{matthews2011procedural} using foot motions and basic patterns. \citep{shiratori2006dancing} and \citep{shiratori2006synthesizing} synthesize music and an animation generated from a motion graph built from motion capture data. It attempts to capture the emotional aspects of human dance, which is a shared goal of the line of action.
+Based on the 2005 paper \citep{calvert2005applications}, which involves a system for composing and editing dances using Labanotation, Matthews et al. experimented with procedurally generating dance motion in the paper \citep{matthews2011procedural} using foot motions and basic patterns. \citep{shiratori2006dancing} and \citep{shiratori2006synthesizing} synthesize music with an animation generated from a motion graph built from motion capture data. It attempts to capture the emotional aspects of human dance, which is a shared goal of the line of action.

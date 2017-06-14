@@ -1,2 +1,12 @@
 \chapter{Limitations and Discussion}\label{chap:discussion}
-Discussion lessons learned from the experiments, and new problems that are raised. 
+
+\subsection{Joint Selection}
+The joint selection interface idea was originally to have the user encircle the joints they want to be merged. This comes with problems and advantages, the benefit being that it may be more intuitive to the user. However, a method for detecting all joints in the 2D circle would be challenging. Along with that difficulty, there would be some ambiguity as to which joints the user actually wants in their circle. Some joints will be behind others in the 3D space and who is to say whether those unseen joints should or should not be included in the selection?
+
+To that effect, currently only pairs of joints can be selected and merged. It could be interesting to see what changes, if any, would be needed for the merging algorithm if the user were allowed to select an arbitrary amount of joints. There is more potential for creating cycles that way, which would make very large combined nodes. On the one hand, less computation would be required in the body line selection and posing because there are fewer joints to choose from in the merged hierarchy. But on the other hand, the resulting rigid body made of nodes could gradually increase to be bigger than the user intended and makes for a less precise pose.
+
+\subsection{User Constraints}
+Users are only allowed to attach and detach hierarchies at keyframes to avoid interpolation issues. If a contact made by the merged hierarchy is present in one keyframe and absent in the next, the splitting of the hierarchy would have to be done during the interpolation at some time in between the two keyframes. So for now the user can only make sets of keyframes where the actual detaching is done exactly at a keyframe.
+
+\subsection{Future Validation}
+Ideally, many more people would be involved in the user study, ranging from artists to engineers. There might be more than three baseline poses and possibly a longer animation to recreate. This certainly gives more validity to the method than just testing between people who have personally worked on the software.

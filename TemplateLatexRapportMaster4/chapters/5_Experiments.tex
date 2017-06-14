@@ -1,21 +1,67 @@
 \chapter{Experimental Validation of Solution}\label{chap:results}
 
 \section{Carefully Selecting Sample Keyframes}
-
+Based on the chart (I will reference the chart label) in \autoref{chap:implementation}, the general LOA combinations, concrete keyframes from the video were chosen as examples. A few keyframes in particular stood out as ones with reasonable transitions between them. It makes sense that these poses would be close in time. Three of the keyframes together make for a very short but interesting and complex clip, which is used as the baseline with which to compare the proposed method.
 
 \section{Establishing a Baseline for Comparison}
+\subsection{User Study}
 
 
-\section{Our Solution}
+\begin{displayquote}
+ Here will be an example user study output file
+\end{displayquote}
+
+The metrics recorded during the posing of characters in Rumba are: how long the program has been running since its initial launch, how many clicks the user made in the viewport for any reason, the number of posing lines drawn, and the number of selection lines drawn.
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/keyframe_case_9_(4)}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/baselinepose1}
+        \end{subfigure}%
+        \caption{The first baseline pose.}
+	\label{fig:bpose1}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/keyframe_case_8_(4)}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/baselinepose2}
+        \end{subfigure}%
+        \caption{The second baseline pose.}
+	\label{fig:bpose2}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/keyframe_case_7_(4)}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/baselinepose3}
+        \end{subfigure}%
+        \caption{The third baseline pose.}
+	\label{fig:bpose3}
+\end{figure}
+
+Here will be a table of the metrics from the three poses.
 
 \subsection{Experiment}
-Describe the performance metrics, experimental hypotheses, experimental conditions, test data,
-and expected results. Provide the test data. Interpret the results of the experiments. Pay special
-attention to cases where the experiments give no information or did not come out as expected.
-Draw lessons and conclusions from the experiments. Explain how additional experiments could
-validate or confirm results.
+The updated user study metrics include all the metrics used in the baseline, plus the number of joints selected, the number of pairs selected, and the number of merges made. The same three poses made with the proposed technique are compared in accuracy to the reference photo (visually), and in efficiency and effort based on the metrics.
 
-\subsection{Results}
+\subsection{Results and Future Experiments}
 
-
-\subsection{Conclusions and Future Experiments}

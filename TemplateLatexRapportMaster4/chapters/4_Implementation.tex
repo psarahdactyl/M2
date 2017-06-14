@@ -29,7 +29,7 @@ Almost inverting the problem at hand, we start from a pose to find the appropria
 	\label{fig:poses}
 \end{figure}
 
-Through this process, certain patterns and common poses stood out, enabling the development of an improved notation for illustrating the poses of characters during their interactions with each other. Patterns included symmetry, parallelism, and repetition. Of course, using these patterns and assumptions to our advantage is what drove the development of a solution. It seemed that during many instances in the clip, it would be more efficient to draw lines over the two dancers as if they were one character. This morphed ``combined'' character should be easier to pose and animate.
+Through this process, certain patterns and common poses emerged, enabling the development of an improved notation for illustrating the poses of characters during their interactions with each other. Patterns included symmetry, parallelism, and repetition. Of course, using these patterns and assumptions to our advantage is what drove the development of a solution. It seemed that during many instances in the clip, it would be more efficient to draw lines over the two dancers as if they were one character. This morphed ``combined'' character should be easier to pose and animate.
 
 \begin{figure}[h!]
 	\centering
@@ -73,28 +73,16 @@ Through this process, certain patterns and common poses stood out, enabling the 
 	\label{fig:tracing}
 \end{figure}
 
-\section{Interface}
-
-
-\section{Merging Kinematics Trees}
-Rather than changing the whole LOA concept and optimization algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize (nearly) the exact same minimization.
-
-\citep{johnson1975finding}
-
 \subsection{Notation}
 Taking inspiration from Sutton Notation, we propose a new notation for representing the poses of two characters both together and separately.
 
-\subsubsection{Common Multi-character Poses}
-\begin{wrapfigure}{L}{0.55\textwidth}
-\centering
-\includegraphics[scale=0.1]{img/bandwagon}
-\caption{Dancing in the Dark.}
-\end{wrapfigure}
-
 There is a dance scene in the film ``The Band Wagon,'' where Cyd Charisse and Fred Astaire start out by walking together side by side, exchanging twirls until it morphs completely into a swing style dance. This scene is our use case for inventing a notation which extends seamlessly to more than one character.
 
-To determine which poses for these dancers were common, I annotated the video with what I thought good keyframes would be if the two characters were treated as one. 
+To determine which poses for these dancers were common, I annotated the video, keeping track of contact points between the two characters, the contact points with the characters and the ground, the main LOAs, and the secondary LOAs. Once the video was annotated, I categorized the keyframes into how many LOAs it took to create that pose. 
 
+NOTE: I am going to add images and an explanation.
+
+\ignore{
 \begin{table}[!htb]
   \centering
   \begin{tabular}{ | c | c || c | c | c | }
@@ -183,7 +171,114 @@ To determine which poses for these dancers were common, I annotated the video wi
   \caption{Types of Keyframes for Two Dancing Characters}
   \label{table:LOAChart}
 \end{table}
+}
 
 
-\section{User Constraints}
-Only allowed to connect and disconnect skeletons at keyframes.
+\section{Merging Kinematics Trees}
+Rather than changing the whole LOA concept and matching algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize the same iterative method to pose.
+
+From \citep{guay2015space}, since there is a viewing plane constraint on which the user draws the posing line, only one angle per joint has to be calculated to get from its current position to the target position. Starting from one end of the selected body line, local joint rotations are found using these equations:
+
+\begin{equation}\label{eq:matching}
+\theta_i(t) = \angle (Px_{i+1}(t) - Px_i(t), z_{i+1}(t)z_i(t)) 
+\end{equation}
+
+where $Px$ is the joint directed projected onto the viewing plane at time $t$ and $z$ is the drawn joint direction determined by the LOA. The current joint $i$ is the parent of joint $i+1$. Then the angles $\theta_i$ are applied to each joint to move it to the new pose. This method is fast and performs well. So instead of changing it, we merge kinematic trees of characters into one combined tree. 
+
+Internally, both the tree and graph structures of characters' skeletons are stored. There is also another type of node called a ``separator'' node, which is purely virtual and acts as a sort of local root to allow for more body line options.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.3]{img/shoulder}
+\caption{In between the spine and the shoulder joints is a separator node, so the user can select only the arm as a body line.}
+\end{figure}
+
+\begin{algorithm}[H]
+ \KwData{list of character hierarchies $h$, list of corresponding joints $pairs$}
+ \KwResult{a single merged hierarchy}
+ \If{$pairs$ is empty}
+ {
+  create a root node $mega\_root$\;
+  \ForEach{hierarchy in $h$} 
+  {
+   make root of hierarchy a child of $mega\_root$\;
+   \Return $mega\_root$\;
+  }
+ }
+ \ForEach{correspondence in $pairs$}
+ {
+  \ForEach{joint in correspondence (2)}
+  {
+   go up hierarchy to find closest root or separator\;
+   \If{roots are same}
+   {
+    connect joints into a $mega\_node$\;
+    union the two nodes children\;
+   }
+   \Else{
+	create a root node $mega\_root$\;
+	make each joint a child of $mega\_root$\;
+	reverse edges from each joint to their respective original nodes\;
+   }
+  }
+ }
+ enumerate cycles in using Johnson's algorithm (\citep{johnson1975finding})\;
+ make each cycle into a new $mega\_node$\;
+ \Return $mega\_root$\;
+ 
+ \caption{The $merge\_hierarchies$ function.}
+\end{algorithm}
+
+A combined node is made by averaging frames (translation and rotation) of other nodes, effectively becoming a rigid body. A combined node made from a cycle averages all the frames of the nodes in the cycle with higher weight on the combined nodes within the cycle. A combined node made by connecting just two nodes averages the two frames and adds a virtual root. By combining nodes this way, we convert the two characters' trees into one, which is the goal.
+
+\section{Interface}
+To select a body line for one character, the user clicks on which model they want either in the viewport or in the node list on the right hand side panel and activates annotation mode. Then they can press and hold shift and draw over the character, tracing the limb they want to select. A path is found between the two closest controllers to the endpoints of the LOA. If a path is found, the blue line shows what was finally selected. The red line is what the user drew and the green line shows a posing line.
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui2}
+        \end{subfigure}%
+        \caption{Selecting a body line.}
+	\label{fig:selection}
+\end{figure}
+
+To pose a character after a proper body line is selected, the user holds the control key while drawing a line with the mouse and \autoref{eq:matching} is used to match the body line to the LOA after the user releases the mouse. The green line shows the LOA. Note that now in the node list, all joints contained in the body line are selected, which allows the user to set keyframes using the LOA.
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui3}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui4}
+        \end{subfigure}%
+        \caption{Posing a body line.}
+	\label{fig:posingbl}
+\end{figure}
+
+While in annotation mode, the user can then enter a sub-mode called joint selection mode. They can then click on pairs of joints and if valid, they will be highlighted in yellow. The user can deselect a joint before it goes into a pair, but when two joints are selected they are automatically put into a pair.
+
+\begin{figure}[h!]
+	\centering
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui5}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.45\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/ui6}
+        \end{subfigure}%
+        \caption{Selecting a pair of joints to connect.}
+	\label{fig:correspondence}
+\end{figure}
