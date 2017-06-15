@@ -3,7 +3,7 @@
 \subsection{Sketch-Based Animation}
 Guay et al. originally proposed the line of action as a posing tool. In ``The Line of Action: an Intuitive Interface for Expressive Character Posing'' (\citep{guay2013line}), there were several contributions: adapting the line of action (LOA) in the form of a new notation to posing 3D characters, solving the LOA problem as an optimization problem, and validating this technique by having users recreate poses from images. 
 
-From this paper came a prototype, in which a user can draw a line in the shape they want a kinematic chain to take. There are a limited amount of maximal, connected, linear kinematic chains, each of which is called a \index{body line@ body line, body lines}\textbf{body line}. Maximal means that the body line must begin and end at an extremity. A connected body line has edges (bones) between every joint (node) in the chain. Linear means the body line must be a straight chain through the tree with no branching, so each node is degree 1 or 2. Though these contraints limit the number of possible chains which can be selected, each character added to the problem adds more body lines. If characters are interacting or touching, this number increases dramatically to the point where a new technique needs to be introduced.
+From this paper came a prototype, in which a user can draw a line in the shape they want a kinematic chain to take. There is a limited amount of maximal, connected, linear kinematic chains, each of which is called a \index{body line@ body line, body lines}\textbf{body line}. Maximal means that the body line must begin and end at an extremity. A connected body line has edges (bones) between every joint (node) in the chain. Linear means the body line must be a straight chain through the tree with no branching, so each node is degree 1 or 2. Though these constraints limit the number of possible chains which can be selected, each character added to the problem adds more body lines. If characters are interacting or touching, this number increases dramatically to the point where a new technique needs to be introduced.
 
 \begin{figure}[!h]
 \centering
@@ -30,7 +30,7 @@ Noticing that lines of actions can visually suggest the potential energy of a mo
 
 In \citep{guay2015space}, Guay et al. continued their work on the line of action to create a technique for animation called space-time sketching, in which a user can draw a line in the path they want a model to take and it will be animated accordingly. As the character follows the path, its model bends and changes shape in a physically realistic way. Their system currently supports creating different movements with the path such as bouncing, rolling, and twisting.
 
-The biggest improvement from their first paper to \citep{guay2015space} in regards to this work is the linear time algorithm for matching a 3D skeleton to a drawn LOA. This more numerically stable approach to matching the character to the line makes for faster results than the formerly used minimization problem.
+The biggest improvement from their first paper to \citep{guay2015space} in regard to this work is the linear time algorithm for matching a 3D skeleton to a drawn LOA. This more numerically stable approach to matching the character to the line makes for faster results than the formerly used minimization problem.
 
 \begin{figure}[!h]
 \includegraphics[scale=0.4]{img/rolling}
@@ -54,20 +54,20 @@ Similarly, \citep{mahmudi2016artist} and \citep{stelzleni2015sketch} respectivel
 \end{figure}
 
 \subsection{Articulated Characters}
-Chris Hecker's ``My Adventures with Inverse Kinematics'' (\citep{hecker2002my}) compares and contrasts different inverse kinematics algorithms to animate a character climbing a rock wall. Articulated character animation is challenging due to the combination of contraints that limits the viability of a pose. In his work with the \index{cyclic coordinate descent@cyclic coordinate descent, CCD} cyclic coordinate descent (CCD) algorithm, whose calculations must start at a fixed root, Hecker decides to dynamically change the root of the human's kinematic tree based on what makes the most sense. The idea of root changing can be particularly helpful in the case of combining kinematic trees, though this talk only deals with one character.
+Chris Hecker's ``My Adventures with Inverse Kinematics'' (\citep{hecker2002my}) compares and contrasts different inverse kinematics algorithms to animate a character climbing a rock wall. Articulated character animation is challenging due to the combination of constraints that limits the viability of a pose. In his work with the \index{cyclic coordinate descent@cyclic coordinate descent, CCD} cyclic coordinate descent (CCD) algorithm, whose calculations must start at a fixed root, Hecker decides to dynamically change the root of the human's kinematic tree based on what makes the most sense. The idea of root changing can be particularly helpful in the case of combining kinematic trees, though this talk only deals with one character.
 
 Articulated characters are complicated to animate. To this end, generating animation is sometimes easier than doing it by setting a character's pose over and over. Many researchers tackle animation problems using motion capture data instead of manually keyframing. The following articles explore generating animation and reusing animation.
 
 In ``Motion Graphs'' (\citep{kovar2002motion}) and ``Style-Based Inverse Kinematics'' (\citep{grochow2004style}), the authors give two different generative methods used to build animations from motion capture sequences. \citep{kovar2002motion} shows how to construct a graph encoding the different orderings of clips that could possibly make up a realistic animation, while \citep{grochow2004style} makes use of a generative machine learning model to easily apply a likely and reasonable style to an existing clip.
 
-``Using an intermediate skeleton and inverse kinematics for motion retargeting'' (\citep{monzani2000using}) is an important paper since it touches upon the idea of changing a skeleton, albeit for retargeting motion rather than creating. This paper describes the usage of an intermediate skeleton when retargeting aninimation from one character hierarchy to another.
+``Using an intermediate skeleton and inverse kinematics for motion retargeting'' (\citep{monzani2000using}) is an important paper since it touches upon the idea of changing a skeleton, albeit for retargeting motion rather than creating. This paper describes the usage of an intermediate skeleton when retargeting animation from one character hierarchy to another.
 
 \section{Animation of Multiple Characters}
 Interactions of multiple characters has never been explored in sketch-based animation, but interactions in general have proved to be another difficult research problem. The following papers show the difficulties of animating by hand, since they all heavily rely on motion capture to provide the animations.
 
 \citep{shum2007simulating} focuses on fighting as an example of close character interactions. This paper also uses motion capture data of single characters to create action-level motion graphs to generate realistic and competitive interactions.
   
-\citep{ho2014multi} and \citep{zhao2017character} aim to describe the dynamic spatial relations between characters and also between characters and objects. They both propose an interaction surface or mesh which is multi-structured. \citep{ho2014multi} uses this surface to adapt motion capture data to accomodate new contraints and different character sizes. \citep{zhao2017character} uses the interaction bisector surface, seen in \autoref{fig:ibs}, to retrieve similar motions from a database given a 3D animated clip.
+\citep{ho2014multi} and \citep{zhao2017character} aim to describe the dynamic spatial relations between characters and also between characters and objects. They both propose an interaction surface or mesh which is multi-structured. \citep{ho2014multi} uses this surface to adapt motion capture data to accomodate new constraints and different character sizes. \citep{zhao2017character} uses the interaction bisector surface, seen in \autoref{fig:ibs}, to retrieve similar motions from a database given a 3D animated clip.
 
 \begin{figure}[!h]
 \centering
@@ -87,7 +87,7 @@ Valerie Sutton is a choreographer responsible for inventing Sutton Dance Writing
 \caption{An example of Valerie Sutton's Dancewriting.}
 \end{figure}
 
-Benesh Movement Notation (introduced in \citep{causley1980introduction}) is analagous to Sutton notation, but for motions instead of poses. This tells a dancer how to transition from one poses to another, exactly like interpolation between keyframes. This notation is complex and not intuitive; it requires a certain amount of study before one can learn to write a dance in this form.
+Benesh Movement Notation (introduced in \citep{causley1980introduction}) is analogous to Sutton notation, but for motions instead of poses. This tells a dancer how to transition from one poses to another, exactly like interpolation between keyframes. This notation is complex and not intuitive; it requires a certain amount of study before one can learn to write a dance in this form.
 
 \begin{figure}[!h]
 \centering

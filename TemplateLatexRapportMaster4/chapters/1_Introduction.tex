@@ -24,7 +24,7 @@ In \autoref{fig:keyframes}, the character has keyframes attached to it on the ti
 \ignore{This is a generic title. Replace it with an actual title that describes the context of the work.
 Approx .5 to 1 page description of the research problems that was addressed and what was required to address it.}
 
-Among the most complicated characters to animate in 3D animation are humanoid characters. To ease this task, animators create a skeleton for their character called a\index{rig@rig, rigs} \textbf{rig}, that consists of joints connected by rigid links (bones) to give a structure to the character. Humanoid rigs can range in complexity from somewhat simple to extremely complicated depending on the amount of detail desired by the user. The structure is a hierarchy of joints that can also be seen as a tree with a root, which in the humanoid case, is usually the pelvis. The leaf nodes of this tree, which are loacted at the maximal parts of the body, are called \index{end effector@end effector, end effectors} \textbf{end effectors}. Leaf nodes come at the end of a \index{kinematic chain@kinematic chain, kinematic chains}\textbf{kinematic chain}, which can be followed back up to the root. \index{control@control, controls, controller, controllers}\textbf{Controls} for joints decide how to deform the geometric mesh of the character.
+Among the most complicated characters to animate in 3D animation are humanoid characters. To ease this task, animators create a skeleton for their character called a\index{rig@rig, rigs} \textbf{rig}, that consists of joints connected by rigid links (bones) to give a structure to the character. Humanoid rigs can range in complexity from somewhat simple to extremely complicated depending on the amount of detail desired by the user. The structure is a hierarchy of joints that can also be seen as a tree with a root, which in the humanoid case, is usually the pelvis. The leaf nodes of this tree, which are located at the maximal parts of the body, are called \index{end effector@end effector, end effectors} \textbf{end effectors}. Leaf nodes come at the end of a \index{kinematic chain@kinematic chain, kinematic chains}\textbf{kinematic chain}, which can be followed back up to the root. \index{control@control, controls, controller, controllers}\textbf{Controls} for joints decide how to deform the geometric mesh of the character.
 
 \begin{figure}[h!]
 	\centering
@@ -46,7 +46,7 @@ Among the most complicated characters to animate in 3D animation are humanoid ch
 \end{figure}
 
 \subsection{Kinematics}
-Forward and inverse kinematics are two general animation methods used mainly in situations in which \index{articulated character@articulated character, articulated characters} articulated characters (jointed characters) need to move according to some contraints. In order to animate this structure successfully, controls are added that allow for forward and inverse kinematics. These controls help the animator move the character into poses that will then act as keyframes.
+Forward and inverse kinematics are two general animation methods used mainly in situations in which \index{articulated character@articulated character, articulated characters} articulated characters (jointed characters) need to move according to some constraints. In order to animate this structure successfully, controls are added that allow for forward and inverse kinematics. These controls help the animator move the character into poses that will then act as keyframes.
 
 \index{forward kinematics@forward kinematics, FK}\textbf{Forward kinematics} (FK) is a method of calculating the position and orientation of the end effector (i.e. a hand or foot) given the positions and angles of the joints higher up in the chain all the way to the root. 
 
@@ -76,7 +76,7 @@ The \index{line of action@line of action, LOA, lines of action, LOAs} line of ac
 	\label{fig:lines}
 \end{figure}
 
-The line of action is useful for expressive posing in a 2D medium. This concept transfers over to 3D sketch-based posing very intuitively. Shown in \autoref{chap:issues}, posing with the line of action works incredibly well for a single character. It provides a more straighforward and quick way of animating a single humanoid character. Extending the line of action to more than one character is nontrivial. Left on its own, many undesirable effects like collisions make the tool frustrating to use, rather than convenient. 
+The line of action is useful for expressive posing in a 2D medium. This concept transfers over to 3D sketch-based posing very intuitively. Shown in \autoref{chap:issues}, posing with the line of action works incredibly well for a single character. It provides a more straightforward and quick way of animating a single humanoid character. Extending the line of action to more than one character is nontrivial. Left on its own, many undesirable effects like collisions make the tool frustrating to use, rather than convenient. 
 
 \section{Proposed Approach}
 \ignore{This is a generic title. Replace it with an actual title that describes the context of the work.

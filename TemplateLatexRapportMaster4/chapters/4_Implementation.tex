@@ -3,6 +3,8 @@
 \section{Analysis of a Typical Video Sequence}
 The previous line of action method in practice is still more tedious than it could be when working with more than one character. In order to work towards the goal of improving the line of action, it is necessary to observe the common combinations of limbs in a typical dance scene.
 
+There is a dance scene in the film ``The Band Wagon,'' where Cyd Charisse and Fred Astaire start out by walking together side by side, exchanging twirls until it morphs completely into a swing style dance. This scene is our use case for inventing a notation which extends seamlessly to more than one character.
+
 Almost inverting the problem at hand, we start from a pose to find the appropriate lines of action by tracing over the shapes of the dancers' bodies using the Grease Pencil Tool in Blender. It was carried out with the purpose of clarifying the properties and limitations of the typical line of action. After seeing at which point the actions started to repeat, a shorter sub-clip was chosen. Annotation was performed in five different ways:
 \begin{enumerate}
 	\item tracking and marking each characters' contact with the ground
@@ -12,7 +14,7 @@ Almost inverting the problem at hand, we start from a pose to find the appropria
 	\item once the main common combinations were established from the above two methods, tracing lines of action only for the selected extreme combination poses.
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering
@@ -56,90 +58,61 @@ Through this process, certain patterns and common poses emerged, enabling the de
 	\label{fig:tracing}
 \end{figure}
 
-\subsection{Notation}
-Taking inspiration from Sutton Notation, we propose a new notation for representing the poses of two characters both together and separately.
+\newpage
 
-There is a dance scene in the film ``The Band Wagon,'' where Cyd Charisse and Fred Astaire start out by walking together side by side, exchanging twirls until it morphs completely into a swing style dance. This scene is our use case for inventing a notation which extends seamlessly to more than one character.
+\subsection{Notation}
+Taking inspiration from Sutton Notation, we propose a new notation for representing the poses of two characters, both together and separately. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/labelednotation}
+\includegraphics[scale=0.7]{img/labelednotation}
 \caption{Labeled notation.}
 \end{figure}
 
-To determine which poses for these dancers were common, I annotated the video, keeping track of contact points between the two characters (purple), the contact points with the characters and the ground (blue), the main LOAs (yellow), and the secondary LOAs (green). Once the video was annotated, I categorized the keyframes into how many LOAs it took to create that pose. I chose the most extreme examples of each combination that I could find.
 \newpage
 
-\begin{table}[h!]
+To determine which poses for these dancers were common, I annotated the video, keeping track of contact points between the two characters (purple), the contact points with the characters and the ground (blue), the main LOAs (yellow), and the secondary LOAs (green). Once the video was annotated, I categorized the keyframes into how many LOAs it took to create that pose. I chose the most extreme examples of each combination that I could find.
+
+\begin{table}[!htb]
 \centering
-\begin{tabular}{ll}
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/01keyframe}
-    \end{minipage} &  
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_1_(1)}
-    \end{minipage}\\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/02keyframe}
-    \end{minipage} & 
-        \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_2_(2)}
-    \end{minipage} \\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/03keyframe}
-    \end{minipage} & 
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_3_(2)}
-    \end{minipage} \\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/04keyframe}
-    \end{minipage} &
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_4_(3)}
-    \end{minipage}  \\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/05keyframe}
-    \end{minipage} &  
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_5_(3)}
-    \end{minipage}\\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/06keyframe}
-    \end{minipage} & 
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_6_(3)}
-    \end{minipage} \\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/07keyframe}
-    \end{minipage} &  
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_7_(4)}
-    \end{minipage}\\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/08keyframe}
-    \end{minipage} &  
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_8_(4)}
-    \end{minipage}\\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/09keyframe}
-    \end{minipage} &  
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_9_(4)}
-    \end{minipage}\\
-	\begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/10keyframe}
-    \end{minipage} & 
-    \begin{minipage}{.28\textwidth}
-      \includegraphics[width=\linewidth, height=25mm]{img/keyframe_case_10_(5)}
-    \end{minipage}
+%\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{cccc}
+\centering
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/01keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_1_(1)}\end{subfigure}&
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/02keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_2_(2)}\end{subfigure}\\
+\quad
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/03keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_3_(2)}\end{subfigure}&
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/04keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_4_(3)}\end{subfigure}\\
+\quad
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/05keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_5_(3)}\end{subfigure}&
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/06keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_6_(3)}\end{subfigure}\\
+\quad
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/07keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_7_(4)}\end{subfigure}&
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/08keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_8_(4)}\end{subfigure}\\
+\quad
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/09keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_9_(4)}\end{subfigure}&
+\begin{subfigure}{0.2\textwidth}\centering\includegraphics[scale=0.1]{img/10keyframe}\end{subfigure}&
+\begin{subfigure}{0.23\textwidth}\centering\includegraphics[scale=0.08]{img/keyframe_case_10_(5)}\end{subfigure}\\
+
 \end{tabular}
+%\end{adjustbox}
 \caption{Common LOA combinations and their corresponding examples in the video.}
 \label{tab:combos}
 \end{table}
 
+\newpage
+
 \section{Merging Kinematic Trees}
-Rather than changing the whole LOA concept and matching algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize the same iterative method to pose. At each keyframe, the kinematic trees of the two characters are to be merged in a consistent way that preserves the tree structure. Then this new structres is controlled by the new proposed lines of action.
+To be able to apply this new notation, the kinematic trees of the two dancing characters need to be dynamically merged and/or separated at various frames of the animation. Rather than changing the whole LOA concept and matching algorithm, we reduce the more complex problem of using LOAs on multiple characters to the original LOA problem and utilize the same iterative method to pose. At each keyframe, the kinematic trees of the two characters are to be merged in a consistent way that preserves the tree structure. Then this new structures is controlled by the new proposed lines of action.
 
 From \citep{guay2015space}, since there is a viewing plane constraint on which the user draws the posing line, only one angle per joint has to be calculated to get from its current position to the target position. Starting from one end of the selected body line, local joint rotations are found using this equation:
 \begin{equation}\label{eq:matching}
@@ -155,6 +128,33 @@ Internally, both the tree and graph structures of characters' skeletons are stor
 \caption{In between the spine and the shoulder joints is a separator node, so the user can select only the arm as a body line.}
 \end{figure}
 
+\newpage
+
+\subsection{Example}
+\begin{figure}[H]
+	\centering
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm2}
+                \caption{The two characters' kinematic trees.}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm3}
+                \caption{A pair of joints are selected to be combined and merge the two hierarchies. These particular nodes do not share a parent. So, a virtual root needs to be created.}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b!]{0.6\textwidth}
+        	\centering
+                \includegraphics[width=\linewidth]{img/algorithm4}
+                \caption{The new root is made the parent of the combined node. Then the edges to each original root are reversed to keep the data structure as a tree.}
+        \end{subfigure}
+    \caption{An example of the algorithm.}
+	\label{fig:example}
+\end{figure}
+
+\subsection{Algorithm}
 \begin{algorithm}[H]
  \KwData{list of character hierarchies $h$, list of corresponding joints $pairs$}
  \KwResult{a single merged hierarchy}
@@ -195,34 +195,10 @@ A combined node is made by averaging frames (translation and rotation) of other 
 
 A kinematic tree must be just that, a tree. It cannot have cycles and each node can only have one parent, so Johnson's algorithm is executed to find all simple cycles in the graph. From this all the nodes in the cycle are merged into its own combined node.
 
-\subsection{Example}
-\begin{figure}[h!]
-	\centering
-        \begin{subfigure}[b!]{0.6\textwidth}
-        	\centering
-                \includegraphics[width=\linewidth]{img/algorithm2}
-                \caption{The two characters kinematic trees.}
-        \end{subfigure}
-        \quad
-        \begin{subfigure}[b!]{0.6\textwidth}
-        	\centering
-                \includegraphics[width=\linewidth]{img/algorithm3}
-                \caption{A pair of joints are selected to be combined and merge the two hierarchies. These particular nodes do not share a parent. So a virtual root needs to be created.}
-        \end{subfigure}%
-        \quad
-        \begin{subfigure}[b!]{0.6\textwidth}
-        	\centering
-                \includegraphics[width=\linewidth]{img/algorithm4}
-                \caption{The new root is made the parent of the combined node. Then the edges to each original root are reversed to keep the data structure as a tree.}
-        \end{subfigure}
-    \caption{An example of the algorithm.}
-	\label{fig:example}
-\end{figure}
-
 \section{Interface}
 To select a body line for one character, the user clicks on which model they want either in the viewport or in the node list on the right hand side panel and activates annotation mode. Then they can press and hold shift and draw over the character, tracing the limb they want to select. A path is found between the two closest controllers to the endpoints of the LOA. If a path is found, the blue line shows what was finally selected. The red line is what the user drew and the green line shows a posing line.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering
@@ -239,7 +215,7 @@ To select a body line for one character, the user clicks on which model they wan
 
 To pose a character after a proper body line is selected, the user holds the control key while drawing a line with the mouse and \autoref{eq:matching} is used to match the body line to the LOA after the user releases the mouse. The green line shows the LOA. Note that now in the node list, all joints contained in the body line are selected, which allows the user to set keyframes using the LOA.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering
@@ -256,7 +232,7 @@ To pose a character after a proper body line is selected, the user holds the con
 
 While in annotation mode, the user can then enter a sub-mode called joint selection mode. They can then click on pairs of joints and if valid, they will be highlighted in yellow. The user can deselect a joint before it goes into a pair, but when two joints are selected they are automatically put into a pair.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
         \begin{subfigure}[b!]{0.45\textwidth}
         	\centering

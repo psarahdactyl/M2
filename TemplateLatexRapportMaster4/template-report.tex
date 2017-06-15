@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper, parskip=full]{memoir} % for a short document
+\documentclass[12pt, a4paper, parskip=full, dvipsnames]{memoir} % for a short document
 \usepackage[french,english]{babel}
 
 \usepackage [vscale=0.76,includehead]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
@@ -44,7 +44,24 @@
 \usepackage{cleveref}
 \usepackage{makeidx} 
 \usepackage[]{algorithm2e}
-\usepackage{csquotes}
+\usepackage[]{xcolor}
+\usepackage{fancyvrb}
+\usepackage{float}
+\usepackage{adjustbox}
+%============================================
+
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+ %
+ framesep=2em, % separation between frame and text
+ labelposition=topline,
+ %
+ commandchars=\|\(\), % escape character and argument delimiters for
+                      % commands within the verbatim
+ commentchar=*        % comment character
+}
+
 %============================================
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 \makesavenoteenv{tabular}
@@ -151,13 +168,22 @@ Assistant Prof. Dominique Vaufreydaz\\
 \renewcommand{\abstracttextfont}{\normalfont}
 \abstractintoc
 \begin{abstract} 
-Your abstract goes here... 
+3D human characters are difficult to pose and animate on their own, let alone while interacting with each other. Even experienced animators require a lot of time setting poses over time to create precise animations. The line of action, an artistic tool used mainly by cartoonists to indicate expressive poses, translates well as a concept to 3D and due to previous research is, available in a convenient and intuitive sketch-based interface. With the line of action, a user can sketch a line in the shape that they want a selected body part of a  character to take. 
+
+This technique has been proven to work well with a single character. However, extending the line of action to work for multiple characters is not a simple task. Many issues come with animating multiple characters who interact with each other. Avoiding collisions, maintaining contacts, and twisting the characters become rather difficult.
+
+We aim to extend the line of action to handle cases involving multiple characters, with a dancing couple as a case study. Dance is a good example of interactions; there are many cases of characters touching each other and moving separately. The characters come together and move apart over the course of a dance sequence. To allow the line of action to span over multiple characters in an intuitive way, we propose an algorithm to merge the skeletons of the characters to be able to pose the characters as one.
+
 \end{abstract}
 \abstractintoc
-
+\newpage
 \renewcommand\abstractname{R\'esum\'e}
 \begin{abstract} \selectlanguage{French}
-Your abstract in French goes here... 
+Les personnages humains en 3D sont difficiles \`{a} positionner et \`{a} animer par eux-m\^{e}mes, sans parler de l'interaction des les uns avec les autres. M\^{e}me les animateurs exp\'{e}riment\'{e}s ont besoin de beaucoup de temps pour \'{e}tablir des poses au fil du temps afin de cr\'{e}er des animations pr\'{e}cises. La ligne d'action est un outil artistique utilis\'{e} principalement par les caricaturistes pour indiquer des poses expressives. Il se traduit bien par un concept \`{a} 3D et, gr\^{a}ce \`{a} des recherches ant\'{e}rieures, est disponible dans une interface bas\'{e}e sur l'esquisse pratique et intuitive. Avec la ligne d'action, un utilisateur peut esquisser une ligne d\'{e}crivant la forme souhait\'{e} que la partie partie du corps s\'{e}lectionn\'{e} d'un personnage prenne.
+
+Cette technique s'est av\'{e}r\'{e}e bien fonctionner avec un seul personnage. Cependant, \'{e}tendre la ligne d'action pour travailler avec plusieurs personnages n'est pas une t\^{a}che simple. Beaucoup de probl\`{e}mes apparaissent dans l'animation de plusieurs personnages interagissant les uns avec les autres. Eviter les collisions, maintenir les contacts et tordre les personnages devient plut\^{o}t difficile.
+
+Nous visons \`{a} \'{e}tendre la ligne d'action pour g\'{e}rer les cas impliquant plusieurs personnages, avec un couple dansant comme \'{e}tude de cas. La danse est un bon exemple d'interactions; Il y a plusieurs cas o\`{u} les personnages se touchent et se d\'{e}placent s\'{e}par\'{e}ment. Les personnages se rassemblent et s'\'{e}cartent au cours d'une s\'{e}quence de danse. Pour permettre \`{a} la ligne d'action de s'\'{e}tendre sur plusieurs personnages de mani\`{e}re intuitive, nous proposons un algorithme pour fusionner les squelettes des personnages afin de pouvoir positionner les personnages comme s'ils y en avait q'un seul. 
 \end{abstract}
 \selectlanguage{English}
 
@@ -173,9 +199,9 @@ Thank you to\ignore{Associate Professor} David Breen,\ignore{Assistant Research 
 
 James Crowley deserves credit for making my move to France viable, and putting up with my numerous emails. I would also like to thank him for teaching me in the first semester of M2 along with all the other MoSIG M2 professors. Thank you to the Fondation partenariale Grenoble INP for funding my first semester.\\
 
-I would like to express my sincere gratitude to both my supervisers Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a Master thesis.\\
+I would like to express my sincere gratitude to both my supervisors Marie-Paule Cani and R\'emi Ronfard for their invaluable assistance, guidance, and patience through the process of a Master thesis.\\
 
-To the IMAGINE engineers Maguelonne de Brive and Julien Daval: thank you for answering my development questions and teaching me the mysterious ways of Collodi and Blender. \\
+To the IMAGINE engineers Maguelonne Beaud de Brive and Julien Daval: thank you for answering my development questions and teaching me the mysterious ways of Rumba and Blender. \\
 
 I have so much appreciation for Tom. Thank you for letting me think out loud to you on the phone; comforting me when I freak out to you on the phone; sending me pictures of our baby bunny, Cinnamon Louise Bun; and providing me with constant encouragement all the way from the United States. \\
 
