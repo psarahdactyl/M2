@@ -116,7 +116,7 @@ To be able to apply this new notation, the kinematic trees of the two dancing ch
 
 From \citep{guay2015space}, since there is a viewing plane constraint on which the user draws the posing line, only one angle per joint has to be calculated to get from its current position to the target position. Starting from one end of the selected body line, local joint rotations are found using this equation:
 \begin{equation}\label{eq:matching}
-\theta_i(t) = \angle (Px_{i+1}(t) - Px_i(t), z_{i+1}(t)z_i(t)) 
+\theta_i(t) = \angle (Px_{i+1}(t) - Px_i(t), z_{i+1}(t) - z_i(t)) 
 \end{equation}
 where $Px$ is the joint directed projected onto the viewing plane at time $t$ and $z$ is the drawn joint direction determined by the LOA. The current joint $i$ is the parent of joint $i+1$. Then the angles $\theta_i$ are applied to each joint to move it to the new pose. This method is fast and performs well. So instead of changing it, we merge kinematic trees of characters into one combined tree. 
 
